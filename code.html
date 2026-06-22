@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Us | Hamza Quran Academy</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600;700&amp;family=Work+Sans:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                "error-container": "#ffdad6",
+                "outline-variant": "#bfc9c3",
+                "on-secondary-fixed": "#241a00",
+                "tertiary-fixed-dim": "#c6c7c2",
+                "inverse-surface": "#27313f",
+                "on-primary-container": "#80bea6",
+                "error": "#ba1a1a",
+                "tertiary-container": "#434542",
+                "surface-tint": "#2b6954",
+                "inverse-on-surface": "#eaf1ff",
+                "on-secondary-fixed-variant": "#574500",
+                "primary-fixed-dim": "#95d3ba",
+                "on-background": "#121c2a",
+                "on-tertiary-fixed": "#1a1c19",
+                "on-primary-fixed": "#002117",
+                "surface-container-lowest": "#ffffff",
+                "outline": "#707974",
+                "primary": "#003527",
+                "background": "#f8f9ff",
+                "secondary-fixed-dim": "#e9c349",
+                "on-tertiary-container": "#b1b2ae",
+                "on-surface-variant": "#404944",
+                "surface-container-high": "#dee9fc",
+                "surface-container-highest": "#d9e3f6",
+                "surface-bright": "#f8f9ff",
+                "on-secondary-container": "#745c00",
+                "surface-container-low": "#eff4ff",
+                "on-error": "#ffffff",
+                "on-primary-fixed-variant": "#0b513d",
+                "surface-variant": "#d9e3f6",
+                "surface": "#f8f9ff",
+                "secondary": "#735c00",
+                "on-tertiary-fixed-variant": "#454744",
+                "tertiary-fixed": "#e3e3de",
+                "secondary-container": "#fed65b",
+                "on-secondary": "#ffffff",
+                "on-tertiary": "#ffffff",
+                "on-error-container": "#93000a",
+                "on-surface": "#121c2a",
+                "tertiary": "#2d2f2c",
+                "on-primary": "#ffffff",
+                "surface-container": "#e6eeff",
+                "secondary-fixed": "#ffe088",
+                "inverse-primary": "#95d3ba",
+                "primary-container": "#064e3b",
+                "surface-dim": "#d0dbed",
+                "primary-fixed": "#b0f0d6"
+              },
+              "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+              },
+              "spacing": {
+                "gutter": "24px",
+                "stack-sm": "12px",
+                "stack-lg": "48px",
+                "margin-desktop": "64px",
+                "margin-mobile": "20px",
+                "container-max": "1280px",
+                "base": "8px",
+                "stack-md": "24px"
+              },
+              "fontFamily": {
+                "headline-sm": ["\"Source Serif 4\""],
+                "body-lg": ["Work Sans"],
+                "caption": ["Work Sans"],
+                "body-md": ["Work Sans"],
+                "display-lg": ["\"Source Serif 4\""],
+                "display-lg-mobile": ["\"Source Serif 4\""],
+                "headline-md": ["\"Source Serif 4\""],
+                "label-md": ["Work Sans"]
+              },
+              "fontSize": {
+                "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .testimonial-slider {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: none;
+        }
+        .testimonial-slider::-webkit-scrollbar {
+            display: none;
+        }
+        .testimonial-card {
+            scroll-snap-align: center;
+            flex: 0 0 100%;
+        }
+        @media (min-width: 768px) {
+            .testimonial-card {
+                flex: 0 0 calc(50% - 12px);
+            }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-secondary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile h-16 w-full bg-surface border-b border-outline-variant transition-colors">
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-surface-container-high transition-colors active:scale-95 duration-150 rounded-full md:hidden" id="menuBtn">
+<span class="material-symbols-outlined text-primary">menu</span>
+</button>
+<h1 class="font-headline-sm text-headline-sm font-bold text-primary">Hamza Quran Academy</h1>
+</div>
+<div class="hidden md:flex gap-8 items-center">
+<nav class="flex gap-6">
+<a class="text-on-surface-variant font-label-md hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-on-surface-variant font-label-md hover:text-primary transition-colors" href="#">Courses</a>
+<a class="text-on-surface-variant font-label-md hover:text-primary transition-colors" href="#">Enroll Now</a>
+<a class="text-primary font-label-md font-bold border-b-2 border-primary" href="#">About Us</a>
+</nav>
+<button class="p-2 hover:bg-surface-container-high transition-colors active:scale-95 duration-150 rounded-full">
+<span class="material-symbols-outlined text-primary">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Navigation Drawer (Mobile) -->
+<div class="fixed inset-0 bg-black/50 z-[55] hidden transition-opacity" id="drawerOverlay"></div>
+<aside class="fixed inset-y-0 left-0 w-80 z-[60] bg-surface-container-low flex flex-col p-6 gap-2 transform -translate-x-full transition-transform duration-300" id="drawer">
+<div class="mb-6">
+<h2 class="font-headline-md text-headline-md font-bold text-primary">Academy Menu</h2>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-4 text-on-surface-variant hover:bg-surface-variant rounded-full px-4 py-3 transition-all active:opacity-80" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-md text-label-md">Home</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant hover:bg-surface-variant rounded-full px-4 py-3 transition-all active:opacity-80" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="font-label-md text-label-md">Courses</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant hover:bg-surface-variant rounded-full px-4 py-3 transition-all active:opacity-80" href="#">
+<span class="material-symbols-outlined">person_add</span>
+<span class="font-label-md text-label-md">Enroll Now</span>
+</a>
+<a class="flex items-center gap-4 bg-primary-container text-on-primary-container rounded-full px-4 py-3 transition-all active:opacity-80" href="#">
+<span class="material-symbols-outlined">info</span>
+<span class="font-label-md text-label-md">About Us</span>
+</a>
+</nav>
+</aside>
+<main class="pt-16">
+<!-- Mission Section -->
+<section class="relative py-stack-lg px-margin-mobile overflow-hidden bg-surface-bright">
+<div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-stack-lg items-center">
+<div class="order-2 md:order-1">
+<span class="text-secondary font-label-md uppercase tracking-widest mb-4 block">Our Sacred Mission</span>
+<h2 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-stack-sm">Illuminating Hearts through Divine Knowledge</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-stack-md leading-relaxed">
+                        At Hamza Quran Academy, we bridge the gap between tradition and technology. Our mission is to provide an accessible, professional, and spiritually enriching environment where students of all ages can master the recitation, memorization, and understanding of the Holy Quran.
+                    </p>
+<div class="flex gap-4">
+<button class="bg-primary text-on-primary px-8 py-3 rounded-full font-label-md hover:shadow-lg transition-all active:scale-95">Our Story</button>
+<button class="border-2 border-secondary text-secondary px-8 py-3 rounded-full font-label-md hover:bg-secondary-container/10 transition-all active:scale-95">View Curriculum</button>
+</div>
+</div>
+<div class="order-1 md:order-2 relative aspect-square rounded-full overflow-hidden border-8 border-surface-container shadow-2xl">
+<div class="absolute inset-0 bg-primary/10 mix-blend-overlay"></div>
+<img class="w-full h-full object-cover" data-alt="A serene and scholarly atmosphere featuring an open Holy Quran resting on a handcrafted wooden rehal. The lighting is soft and warm, reminiscent of a quiet library at dawn. The background is a minimalist, clean white study space with subtle emerald green accents, embodying a sense of peace and professional excellence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHRMvPyNABtcvn4zp45IIoUWGPvolCHyZ4TF__J-8C0kIXmEpOW7lIw6JS40nG7gU4DcV6zewiJ1cX3BbTwQteNuo6_7F_fhpN6XEb19ZSkwmDyZHHYIwEi0mEyGb8rcaALV35buWtOjUJEZuPAMMWo7XdWVmVixWK-M6z0Tsb3u7lq3XP7JbLbLt2vpnb88AV4tAc4mFZwLUQ6rtzLfRAXyvGDb5V4K8ONT1Ji2fjNs-1OWw78nBe8ulslvfJZCs-DP0mAM-jyMk"/>
+</div>
+</div>
+</section>
+<!-- Stats Grid (Bento Style) -->
+<section class="py-stack-lg px-margin-mobile bg-surface-container-low">
+<div class="max-w-container-max mx-auto">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="bg-white p-8 rounded-xl border border-primary/10 flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-secondary text-4xl mb-2" style="font-variation-settings: 'FILL' 1;">groups</span>
+<h3 class="font-headline-md text-headline-md text-primary">5,000+</h3>
+<p class="text-on-surface-variant font-label-md">Global Students</p>
+</div>
+<div class="bg-white p-8 rounded-xl border border-primary/10 flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-secondary text-4xl mb-2" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+<h3 class="font-headline-md text-headline-md text-primary">45+</h3>
+<p class="text-on-surface-variant font-label-md">Specialized Courses</p>
+</div>
+<div class="bg-white p-8 rounded-xl border border-primary/10 flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-secondary text-4xl mb-2" style="font-variation-settings: 'FILL' 1;">verified</span>
+<h3 class="font-headline-md text-headline-md text-primary">100%</h3>
+<p class="text-on-surface-variant font-label-md">Ijazah Certified</p>
+</div>
+<div class="bg-white p-8 rounded-xl border border-primary/10 flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-secondary text-4xl mb-2" style="font-variation-settings: 'FILL' 1;">language</span>
+<h3 class="font-headline-md text-headline-md text-primary">30+</h3>
+<p class="text-on-surface-variant font-label-md">Countries Reached</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Meet Our Tutors -->
+<section class="py-stack-lg px-margin-mobile">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-stack-lg">
+<h2 class="font-headline-md text-headline-md text-primary mb-2">Meet Our Expert Tutors</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto">Guided by scholars who embody the prophetic character, our tutors are meticulously selected for their tajweed mastery and pedagogical excellence.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Tutor 1 -->
+<div class="group relative bg-white rounded-xl overflow-hidden border border-primary/10 hover:shadow-xl transition-all duration-300">
+<div class="h-80 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A professional headshot of a male Quran tutor with a kind expression, wearing a traditional white thobe and a subtle dark vest. He is set against a blurred background of an elegant Islamic library with warm lighting. The style is modern, corporate, and trustworthy with high-contrast emerald and gold accents in the lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5Qe7KIzLkHCDRiV5pNlFzrf3D1IOXPDcEmqx8Ctyc7SWqd93Ax1oXdsstBrlsCAdviBrcwHmVNNmf3ZU7gNAHmTBsc3ROQSgtpR8Hn4OvIxuYtp1mlSCIVqMcIzIVxpnyVpxY3jrWvieWzCNdRtqg9Gq1NS-6EvDyAXaJ3H1LXzXK9zKM1qYzV3KNlIdZYyBR4PVFVUdx9t4JJVT_URoeyOHeTJ56ICTDYyNnMydPEPCYPi1CnPgm_z_T-OYPbbhC0JBn0dQCeOA"/>
+<div class="absolute top-4 right-4 bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full font-label-md">Hafiz-ul-Quran</div>
+</div>
+<div class="p-6">
+<h4 class="font-headline-sm text-headline-sm text-primary">Sheikh Ahmad Al-Farsi</h4>
+<p class="text-secondary font-label-md mb-4">Senior Tajweed Specialist</p>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">history_edu</span>
+<span class="text-caption">15 Years Experience</span>
+</div>
+</div>
+</div>
+<!-- Tutor 2 -->
+<div class="group relative bg-white rounded-xl overflow-hidden border border-primary/10 hover:shadow-xl transition-all duration-300">
+<div class="h-80 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A professional headshot of a female Quran teacher with a serene and welcoming presence, wearing a modest professional hijab in a soft cream color. The background is a clean, bright educational setting with subtle geometric Islamic patterns. The aesthetic is minimalist and high-quality, focusing on her scholarly and approachable demeanor." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCX-ErXCGFcu6mbS6ScDNF4pBmGkqoIzFHpnsFgFUKvCGeNgBI5_w7W25n4PUsZyzfGb9diBvKYBT9W7DgfxgsBU8jyMkKqWlSsxDgE1ploVf06UjdZPpSoH2Aa-ghYK4xnn45sjEfCA8sVko77b-cm4iLpYcJvAu3IBZuHCVHjcl-HqOE4Uw_o-cX-jxjiVcZLcfZpKLWqQYUN-G64bwK5CNwi3c9bE13uzYSMAgkYyQNTygkWqesCgwoesxDnhJOH4DRZ84GYMBQ"/>
+<div class="absolute top-4 right-4 bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full font-label-md">Ijazah Holder</div>
+</div>
+<div class="p-6">
+<h4 class="font-headline-sm text-headline-sm text-primary">Ustadha Maryam Idris</h4>
+<p class="text-secondary font-label-md mb-4">Children's Pedagogy Lead</p>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">history_edu</span>
+<span class="text-caption">10 Years Experience</span>
+</div>
+</div>
+</div>
+<!-- Tutor 3 -->
+<div class="group relative bg-white rounded-xl overflow-hidden border border-primary/10 hover:shadow-xl transition-all duration-300">
+<div class="h-80 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A professional headshot of a male scholar with a friendly smile, dressed in a sharp professional suit with a subtle pattern. He is positioned in a modern office with large windows showing a bright, soft-focused garden. The lighting highlights his face with a warm glow, embodying excellence and professional academic rigor." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7JSo1aE6sRtZWE3uAG8ebcgu9lCmwEpAAd3STaofK5i5xOQeuWaxOiy6XjLbNMJnv1CH0Sekt1H22htfbdKEh6OrAA4z5cCGFNmUiqjtEYdvZSeysnXiM3hHtZskZPo2wMxqJvrMGozmc5rBUQMvUfoMraus3MPH0M_8JI1hksDTwZmHrLsmbT6vhiPzWDsi6Yz2Des08jnI5-OksfygQj2x8WGysRCRTxqQzz6brud7hC-XF0f9bcuajvetTPoWXGMPQEdwVmeY"/>
+<div class="absolute top-4 right-4 bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full font-label-md">PhD in Tafsir</div>
+</div>
+<div class="p-6">
+<h4 class="font-headline-sm text-headline-sm text-primary">Dr. Omar Suleiman</h4>
+<p class="text-secondary font-label-md mb-4">Director of Quranic Sciences</p>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">history_edu</span>
+<span class="text-caption">12 Years Experience</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials Slider -->
+<section class="py-stack-lg px-margin-mobile bg-primary text-on-primary">
+<div class="max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-stack-lg gap-4">
+<div class="max-w-xl">
+<h2 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-primary mb-4">Voices of Enlightenment</h2>
+<p class="text-primary-fixed-dim font-body-lg">Hear from our students and parents about their transformative journey with the Book of Allah.</p>
+</div>
+<div class="flex gap-4">
+<button class="w-12 h-12 rounded-full border border-primary-fixed-dim/30 flex items-center justify-center hover:bg-primary-container transition-colors" id="prevTest">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<button class="w-12 h-12 rounded-full border border-primary-fixed-dim/30 flex items-center justify-center hover:bg-primary-container transition-colors" id="nextTest">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="testimonial-slider gap-gutter pb-8" id="slider">
+<!-- Testimonial 1 -->
+<div class="testimonial-card bg-primary-container/40 p-8 rounded-2xl border border-primary-fixed-dim/10 flex flex-col justify-between">
+<div>
+<div class="flex gap-1 text-secondary-fixed mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-headline-sm italic text-primary-fixed mb-8 leading-relaxed">"The tajweed sessions are life-changing. My teacher is patient, knowledgeable, and has helped me correct mistakes I've made for years. The platform is seamless and the learning environment is truly blessed."</p>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-14 h-14 rounded-full overflow-hidden border-2 border-secondary-fixed">
+<img class="w-full h-full object-cover" data-alt="A portrait of a smiling young adult male student in a bright, modern setting. He looks confident and inspired. The style is professional and uses a soft light-mode palette with high contrast between the subject and the clean background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMwwAg0StD9vsO6ZipC525-vh3FUicfXECvrdyqrRDpiMTVpLFohABj5dwyGBib_kH7DAI4ohZgNodCZe-o4tlgYvyzpYbxgqG2fz_Op_56oszP91lj-6fYbgw_qVCXF2KOSKa2aNZG3kfXvrxFub-eVlwPGadGijkAyGOBwL27i3_iW9-9FZpKkEOX9wx8iJlVd5pSjpNom5rCZ6AC5MF84xoWcgwZ72Aiz3n4h1KZOtv0Zcdp-M3eFZOsQH7786fS3cTc7VvnMM"/>
+</div>
+<div>
+<h5 class="font-label-md text-white">Zaid K.</h5>
+<p class="text-caption opacity-70">Memorization Student, UK</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="testimonial-card bg-primary-container/40 p-8 rounded-2xl border border-primary-fixed-dim/10 flex flex-col justify-between">
+<div>
+<div class="flex gap-1 text-secondary-fixed mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-headline-sm italic text-primary-fixed mb-8 leading-relaxed">"As a parent, finding a safe and professional online environment for my children was paramount. Hamza Academy exceeded all expectations. My kids look forward to every class!"</p>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-14 h-14 rounded-full overflow-hidden border-2 border-secondary-fixed">
+<img class="w-full h-full object-cover" data-alt="A portrait of a middle-aged woman with a warm, caring expression, dressed in professional modest attire. She is in a bright, airy home office setting. The visual quality is crisp and professional, emphasizing trust and parental satisfaction." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5GO9cRGuxcsYqfTIk0o831Fad9IMmCKSqL_nLK_nwsVvjmyqE5WrAAucS6yDL3Fce0eSxnhQqpOzyp6es2DW64yLjxl8UBPLtaCsuPVL0IhdNLXK8wbegjgviFMVRMeEC5O8aIo1U_t7MCFHH1eQGTfhuZyYXAKT2HfKYyKEg0dUvD_Xfrhm5Z3aVqAN2CR9ybQ76xkUAD93F9yoKD8ct5aDwikJrK8qawQijCcfnCHPyi6USi5H7Cvd9_P1epOOHUEJYN8XFUrQ"/>
+</div>
+<div>
+<h5 class="font-label-md text-white">Fatima A.</h5>
+<p class="text-caption opacity-70">Parent, Canada</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="testimonial-card bg-primary-container/40 p-8 rounded-2xl border border-primary-fixed-dim/10 flex flex-col justify-between">
+<div>
+<div class="flex gap-1 text-secondary-fixed mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-headline-sm italic text-primary-fixed mb-8 leading-relaxed">"The level of expertise here is unmatched. I've achieved my Ijazah in Tajweed within 2 years of consistent study. The scholarship and dedication of the staff are unparalleled."</p>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-14 h-14 rounded-full overflow-hidden border-2 border-secondary-fixed">
+<img class="w-full h-full object-cover" data-alt="A portrait of a male professional scholar in his late 30s, wearing an elegant academic robe. He is seated in a library with books in the background. The lighting is focused and clear, conveying wisdom and academic achievement." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0kd9xPwXTJhLd9E-Q6EdKfSITin27stoP7FvXj8u5aOuCC46JQ9W_hiB-ObVDQRuWvTuRRq_PU7g2YSwcJ6EJZl-6m78Y6Q7lj7UzRE7dtc19qsrHfhhIcK-oRwThIIttu8jDPIcKSL74T96LR_Xcog9SGgWFd8zOI7eN0FicOsl_jeAEUinQvJ4-2B8IW4zDdo15X0cqAMiENqqo85NlpI2ol0fEXkQePtUu9bTzW5hT2Q7X9UK9krbwD-yJ-F1JROg1ITOuKGo"/>
+</div>
+<div>
+<h5 class="font-label-md text-white">Ibrahim J.</h5>
+<p class="text-caption opacity-70">Ijazah Graduate, UAE</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Call to Action -->
+<section class="py-stack-lg px-margin-mobile relative overflow-hidden">
+
+<div class="max-w-3xl mx-auto text-center relative z-10">
+<h2 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-6">Ready to Start Your Journey?</h2>
+<p class="font-body-lg text-on-surface-variant mb-8">Join thousands of students worldwide and begin your path towards mastering the Word of Allah with guidance from world-class scholars.</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<button class="bg-primary text-on-primary px-10 py-4 rounded-full font-label-md hover:shadow-xl transition-all active:scale-95">Enroll Now</button>
+<button class="bg-secondary text-on-secondary px-10 py-4 rounded-full font-label-md hover:shadow-xl transition-all active:scale-95">Book Free Trial</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-primary dark:bg-primary-container flex flex-col items-center gap-stack-sm py-stack-md px-margin-mobile text-center">
+<h2 class="font-headline-sm text-headline-sm text-on-primary">Hamza Quran Academy</h2>
+<div class="flex gap-6 my-4">
+<a class="text-on-primary opacity-80 hover:text-secondary-fixed transition-colors font-caption" href="#">Contact Us</a>
+<a class="text-on-primary opacity-80 hover:text-secondary-fixed transition-colors font-caption" href="#">Privacy Policy</a>
+<a class="text-on-primary opacity-80 hover:text-secondary-fixed transition-colors font-caption" href="#">Terms of Service</a>
+</div>
+<p class="text-on-primary opacity-80 font-caption">© 2024 Hamza Quran Academy. All rights reserved.</p>
+<div class="flex gap-4 mt-2">
+<span class="material-symbols-outlined text-secondary-fixed cursor-pointer hover:scale-110 transition-transform">language</span>
+<span class="material-symbols-outlined text-secondary-fixed cursor-pointer hover:scale-110 transition-transform">public</span>
+<span class="material-symbols-outlined text-secondary-fixed cursor-pointer hover:scale-110 transition-transform">mail</span>
+</div>
+</footer>
+<script>
+        // Drawer Logic
+        const menuBtn = document.getElementById('menuBtn');
+        const drawer = document.getElementById('drawer');
+        const overlay = document.getElementById('drawerOverlay');
+
+        function toggleDrawer() {
+            drawer.classList.toggle('-translate-x-full');
+            overlay.classList.toggle('hidden');
+        }
+
+        menuBtn.addEventListener('click', toggleDrawer);
+        overlay.addEventListener('click', toggleDrawer);
+
+        // Testimonial Slider Logic
+        const slider = document.getElementById('slider');
+        const prevBtn = document.getElementById('prevTest');
+        const nextBtn = document.getElementById('nextTest');
+
+        prevBtn.addEventListener('click', () => {
+            slider.scrollBy({ left: -300, behavior: 'smooth' });
+        });
+
+        nextBtn.addEventListener('click', () => {
+            slider.scrollBy({ left: 300, behavior: 'smooth' });
+        });
+
+        // Smooth reveal animations on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section > div').forEach(el => {
+            el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+            observer.observe(el);
+        });
+    </script>
+</body></html>
