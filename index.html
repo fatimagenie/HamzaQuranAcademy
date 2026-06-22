@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hamza Quran Academy - Master the Holy Quran</title>
-  <meta name="description" content="Hamza Quran Academy - Professional online Quran learning with certified tutors. Courses in Tajweed, Hifz, Noorani Qaida and Arabic Language."/>
-  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <meta name="description"
+    content="Hamza Quran Academy - Professional online Quran learning with certified tutors. Courses in Tajweed, Hifz, Noorani Qaida and Arabic Language." />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <script id="tailwind-config">
     tailwind.config = {
@@ -91,14 +96,14 @@
             "label-md": ["Work Sans"]
           },
           fontSize: {
-            "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
-            "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
-            "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
-            "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
-            "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-            "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
-            "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
-            "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+            "headline-sm": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+            "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }]
           }
         }
       }
@@ -108,24 +113,29 @@
     .material-symbols-outlined {
       font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
     }
+
     .text-gold-gradient {
       background: linear-gradient(to right, #735c00, #ffe088);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
+
     .glass-card {
       background: rgba(255, 255, 255, 0.7);
       backdrop-filter: blur(8px);
       border: 1px solid rgba(0, 53, 39, 0.1);
     }
+
     .serene-shadow {
       box-shadow: 0 4px 20px -2px rgba(0, 53, 39, 0.05);
     }
+
     .scholar-card-hover:hover {
       transform: translateY(-4px);
       box-shadow: 0 10px 25px -5px rgba(0, 53, 39, 0.12);
     }
+
     .testimonial-slider {
       display: flex;
       overflow-x: auto;
@@ -133,60 +143,114 @@
       scrollbar-width: none;
       gap: 24px;
     }
-    .testimonial-slider::-webkit-scrollbar { display: none; }
+
+    .testimonial-slider::-webkit-scrollbar {
+      display: none;
+    }
+
     .testimonial-card {
       scroll-snap-align: center;
       flex: 0 0 100%;
     }
+
     @media (min-width: 768px) {
-      .testimonial-card { flex: 0 0 calc(50% - 12px); }
+      .testimonial-card {
+        flex: 0 0 calc(50% - 12px);
+      }
     }
+
     /* Page transitions */
     .page-section {
       display: none;
       animation: fadeIn 0.35s ease-in-out;
     }
+
     .page-section.active {
       display: block;
     }
+
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(16px); }
-      to   { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
+
     /* Nav active underline */
     .nav-link.active-link {
       color: #003527 !important;
       font-weight: 700;
       border-bottom: 2px solid #003527;
     }
+
     /* Hero spinning ring */
-    @keyframes spin-slow { from {transform: rotate(0deg);} to {transform: rotate(360deg);} }
-    .spin-slow { animation: spin-slow 20s linear infinite; }
+    @keyframes spin-slow {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .spin-slow {
+      animation: spin-slow 20s linear infinite;
+    }
+
     /* Smooth reveal on scroll */
-    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-    body { min-height: 100dvh; }
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    body {
+      min-height: 100dvh;
+    }
   </style>
 </head>
+
 <body class="bg-background text-on-surface font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
 
   <!-- ===== TOP APP BAR ===== -->
-  <header id="topbar" class="fixed top-0 w-full z-50 bg-surface border-b border-outline-variant flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16 transition-all duration-300">
+  <header id="topbar"
+    class="fixed top-0 w-full z-50 bg-surface border-b border-outline-variant flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16 transition-all duration-300">
     <div class="flex items-center gap-4">
-      <button id="drawer-trigger" class="p-2 hover:bg-surface-container-high transition-colors active:scale-95 duration-150 rounded-full md:hidden">
+      <button id="drawer-trigger"
+        class="p-2 hover:bg-surface-container-high transition-colors active:scale-95 duration-150 rounded-full md:hidden">
         <span class="material-symbols-outlined text-primary">menu</span>
       </button>
-      <button id="logo-btn" class="font-headline-sm text-headline-sm font-bold text-primary hover:opacity-80 transition-opacity" style="font-family:'Source Serif 4',serif">
+      <button id="logo-btn"
+        class="font-headline-sm text-headline-sm font-bold text-primary hover:opacity-80 transition-opacity"
+        style="font-family:'Source Serif 4',serif">
         Hamza Quran Academy
       </button>
     </div>
     <!-- Desktop Nav -->
     <div class="hidden md:flex items-center gap-8">
       <nav class="flex gap-6">
-        <a href="#" class="nav-link font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors active-link" data-page="home">Home</a>
-        <a href="#" class="nav-link font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" data-page="courses">Courses</a>
-        <a href="#" class="nav-link font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" data-page="enroll">Enroll Now</a>
-        <a href="#" class="nav-link font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" data-page="about">About Us</a>
+        <a href="#"
+          class="nav-link font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors active-link"
+          data-page="home">Home</a>
+        <a href="#"
+          class="nav-link font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors"
+          data-page="courses">Courses</a>
+        <a href="#"
+          class="nav-link font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors"
+          data-page="enroll">Enroll Now</a>
+        <a href="#contact-section"
+          class="nav-link font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors">Contact</a>
       </nav>
       <button class="p-2 hover:bg-surface-container-high transition-colors active:scale-95 duration-150 rounded-full">
         <span class="material-symbols-outlined text-primary">account_circle</span>
@@ -195,28 +259,39 @@
   </header>
 
   <!-- ===== NAVIGATION DRAWER (Mobile) ===== -->
-  <div id="drawer-overlay" class="fixed inset-0 bg-black/50 z-[55] hidden opacity-0 transition-opacity duration-300"></div>
-  <aside id="drawer" class="fixed inset-y-0 left-0 w-80 z-[60] bg-surface-container-low shadow-lg flex flex-col p-6 gap-2 -translate-x-full transition-transform duration-300">
+  <div id="drawer-overlay" class="fixed inset-0 bg-black/50 z-[55] hidden opacity-0 transition-opacity duration-300">
+  </div>
+  <aside id="drawer"
+    class="fixed inset-y-0 left-0 w-80 z-[60] bg-surface-container-low shadow-lg flex flex-col p-6 gap-2 -translate-x-full transition-transform duration-300">
     <div class="mb-6">
-      <h2 class="font-headline-md text-headline-md font-bold text-primary" style="font-family:'Source Serif 4',serif">Academy Menu</h2>
+      <h2 class="font-headline-md text-headline-md font-bold text-primary" style="font-family:'Source Serif 4',serif">
+        Academy Menu</h2>
       <div class="h-[2px] w-12 bg-secondary-fixed-dim mt-2 rounded-full"></div>
     </div>
     <nav class="flex flex-col gap-2">
-      <a href="#" class="drawer-link flex items-center gap-4 bg-primary-container text-on-primary-container rounded-full px-4 py-3 transition-all active:opacity-80" data-page="home">
+      <a href="#"
+        class="drawer-link flex items-center gap-4 bg-primary-container text-on-primary-container rounded-full px-4 py-3 transition-all active:opacity-80"
+        data-page="home">
         <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">home</span>
         <span class="font-label-md text-label-md">Home</span>
       </a>
-      <a href="#" class="drawer-link flex items-center gap-4 text-on-surface-variant hover:bg-surface-variant rounded-full px-4 py-3 transition-all active:opacity-80" data-page="courses">
+      <a href="#"
+        class="drawer-link flex items-center gap-4 text-on-surface-variant hover:bg-surface-variant rounded-full px-4 py-3 transition-all active:opacity-80"
+        data-page="courses">
         <span class="material-symbols-outlined">menu_book</span>
         <span class="font-label-md text-label-md">Courses</span>
       </a>
-      <a href="#" class="drawer-link flex items-center gap-4 text-on-surface-variant hover:bg-surface-variant rounded-full px-4 py-3 transition-all active:opacity-80" data-page="enroll">
+      <a href="#"
+        class="drawer-link flex items-center gap-4 text-on-surface-variant hover:bg-surface-variant rounded-full px-4 py-3 transition-all active:opacity-80"
+        data-page="enroll">
         <span class="material-symbols-outlined">person_add</span>
         <span class="font-label-md text-label-md">Enroll Now</span>
       </a>
-      <a href="#" class="drawer-link flex items-center gap-4 text-on-surface-variant hover:bg-surface-variant rounded-full px-4 py-3 transition-all active:opacity-80" data-page="about">
-        <span class="material-symbols-outlined">info</span>
-        <span class="font-label-md text-label-md">About Us</span>
+      <a href="#contact-section"
+        class="drawer-link flex items-center gap-4 text-on-surface-variant hover:bg-surface-variant rounded-full px-4 py-3 transition-all active:opacity-80"
+        onclick="toggleDrawer(false)">
+        <span class="material-symbols-outlined">mail</span>
+        <span class="font-label-md text-label-md">Contact Us</span>
       </a>
     </nav>
   </aside>
@@ -225,7 +300,7 @@
   <main class="pt-16">
 
     <!-- ========================================= -->
-    <!-- PAGE: HOME                                 -->
+    <!-- PAGE: HOME                                -->
     <!-- ========================================= -->
     <section id="page-home" class="page-section active">
 
@@ -233,22 +308,30 @@
       <section class="relative min-h-[720px] flex items-center overflow-hidden bg-primary">
         <div class="absolute inset-0 opacity-10 pointer-events-none">
           <div class="absolute top-10 right-10 w-96 h-96 rounded-full border border-secondary-fixed/40 spin-slow"></div>
-          <div class="absolute bottom-10 left-10 w-64 h-64 rounded-full border border-secondary-fixed/20 spin-slow" style="animation-direction:reverse;animation-duration:14s"></div>
+          <div class="absolute bottom-10 left-10 w-64 h-64 rounded-full border border-secondary-fixed/20 spin-slow"
+            style="animation-direction:reverse;animation-duration:14s"></div>
         </div>
-        <div class="container mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-12 gap-gutter items-center relative z-10 py-16">
+        <div
+          class="container mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-12 gap-gutter items-center relative z-10 py-16">
           <div class="md:col-span-7 flex flex-col gap-stack-md text-on-primary">
-            <span class="font-label-md text-label-md uppercase tracking-widest text-secondary-fixed">Excellence in Recitation</span>
-            <h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg leading-tight" style="font-family:'Source Serif 4',serif">
+            <span class="font-label-md text-label-md uppercase tracking-widest text-secondary-fixed">Excellence in
+              Recitation</span>
+            <h1
+              class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg leading-tight"
+              style="font-family:'Source Serif 4',serif">
               Learn Quran Online from <span class="text-secondary-fixed">Expert Tutors</span>
             </h1>
             <p class="font-body-lg text-body-lg text-primary-fixed-dim max-w-xl">
-              Embark on a spiritual journey of enlightenment with personalized one-on-one sessions tailored for all ages and skill levels. Professionalism rooted in tradition.
+              Embark on a spiritual journey of enlightenment with personalized one-on-one sessions tailored for all ages
+              and skill levels. Professionalism rooted in tradition.
             </p>
             <div class="flex flex-wrap gap-stack-sm mt-4">
-              <button onclick="navigateTo('enroll')" class="px-8 py-4 bg-secondary-container text-on-secondary-container font-label-md text-label-md rounded-lg shadow-lg hover:bg-secondary-fixed transition-all active:scale-95">
+              <button onclick="navigateTo('enroll')"
+                class="px-8 py-4 bg-secondary-container text-on-secondary-container font-label-md text-label-md rounded-lg shadow-lg hover:bg-secondary-fixed transition-all active:scale-95">
                 Start Your Journey
               </button>
-              <button onclick="navigateTo('courses')" class="px-8 py-4 border border-primary-fixed-dim text-primary-fixed-dim font-label-md text-label-md rounded-lg hover:bg-primary-container transition-all active:scale-95">
+              <button onclick="navigateTo('courses')"
+                class="px-8 py-4 border border-primary-fixed-dim text-primary-fixed-dim font-label-md text-label-md rounded-lg hover:bg-primary-container transition-all active:scale-95">
                 Explore Courses
               </button>
             </div>
@@ -257,7 +340,9 @@
             <div class="aspect-square rounded-full border-2 border-secondary-fixed/30 absolute inset-0 spin-slow"></div>
             <div class="relative z-10 p-4">
               <div class="rounded-xl overflow-hidden border-4 border-white/10 serene-shadow" style="height:480px">
-                <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAa-X27H2WPh7Ch0SWNcdlawZFw_plAgybGX2c73JcH0pPI9X5xp_QMGvcUrz-8uke5RacP7iSNC2WEsQDu4s7_e5CABx4baALntw_QLLNc3v-IxX1TIVSn3tGs919gikpxPe6lMcSJVS5uFbCGFPmbN3wlvc9c83SZ-uv0zLv6Gb9_I3V7d0_khOjSX1NIk5CbgoZrLNMACgsGKGKSCshwZ0VfOU2WmaIALH5GvAAGI6TvtOaVDR4I3DnlxHNs6lw_sQUDC_s8kBo" alt="Scholar teaching Quran"/>
+                <img class="w-full h-full object-cover"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAa-X27H2WPh7Ch0SWNcdlawZFw_plAgybGX2c73JcH0pPI9X5xp_QMGvcUrz-8uke5RacP7iSNC2WEsQDu4s7_e5CABx4baALntw_QLLNc3v-IxX1TIVSn3tGs919gikpxPe6lMcSJVS5uFbCGFPmbN3wlvc9c83SZ-uv0zLv6Gb9_I3V7d0_khOjSX1NIk5CbgoZrLNMACgsGKGKSCshwZ0VfOU2WmaIALH5GvAAGI6TvtOaVDR4I3DnlxHNs6lw_sQUDC_s8kBo"
+                  alt="Scholar teaching Quran" />
               </div>
             </div>
           </div>
@@ -268,30 +353,46 @@
       <section class="py-stack-lg bg-surface">
         <div class="container mx-auto px-margin-mobile md:px-margin-desktop">
           <div class="text-center mb-stack-lg max-w-2xl mx-auto reveal">
-            <h2 class="font-headline-md text-headline-md text-primary mb-2" style="font-family:'Source Serif 4',serif">Why Choose Our Academy?</h2>
-            <p class="font-body-md text-body-md text-on-surface-variant">We combine traditional teaching methods with modern technology to provide an unparalleled learning experience.</p>
+            <h2 class="font-headline-md text-headline-md text-primary mb-2" style="font-family:'Source Serif 4',serif">
+              Why Choose Our Academy?</h2>
+            <p class="font-body-md text-body-md text-on-surface-variant">We combine traditional teaching methods with
+              modern technology to provide an unparalleled learning experience.</p>
           </div>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-            <div class="p-8 bg-white border border-primary/10 rounded-xl hover:border-secondary-fixed transition-all group serene-shadow scholar-card-hover reveal">
-              <div class="w-12 h-12 rounded-lg bg-primary/5 flex items-center justify-center mb-6 group-hover:bg-primary-container transition-colors">
-                <span class="material-symbols-outlined text-primary group-hover:text-on-primary-container">verified</span>
+            <div
+              class="p-8 bg-white border border-primary/10 rounded-xl hover:border-secondary-fixed transition-all group serene-shadow scholar-card-hover reveal">
+              <div
+                class="w-12 h-12 rounded-lg bg-primary/5 flex items-center justify-center mb-6 group-hover:bg-primary-container transition-colors">
+                <span
+                  class="material-symbols-outlined text-primary group-hover:text-on-primary-container">verified</span>
               </div>
-              <h3 class="font-headline-sm text-headline-sm text-primary mb-4" style="font-family:'Source Serif 4',serif">Certified Teachers</h3>
-              <p class="font-body-md text-body-md text-on-surface-variant">Our instructors are Al-Azhar graduates and Ijazah holders with years of experience in distance learning.</p>
+              <h3 class="font-headline-sm text-headline-sm text-primary mb-4"
+                style="font-family:'Source Serif 4',serif">Certified Teachers</h3>
+              <p class="font-body-md text-body-md text-on-surface-variant">Our instructors are Al-Azhar graduates and
+                Ijazah holders with years of experience in distance learning.</p>
             </div>
-            <div class="p-8 bg-white border border-primary/10 rounded-xl hover:border-secondary-fixed transition-all group border-t-2 border-t-secondary-fixed serene-shadow scholar-card-hover reveal">
-              <div class="w-12 h-12 rounded-lg bg-primary/5 flex items-center justify-center mb-6 group-hover:bg-primary-container transition-colors">
-                <span class="material-symbols-outlined text-primary group-hover:text-on-primary-container">schedule</span>
+            <div
+              class="p-8 bg-white border border-primary/10 rounded-xl hover:border-secondary-fixed transition-all group border-t-2 border-t-secondary-fixed serene-shadow scholar-card-hover reveal">
+              <div
+                class="w-12 h-12 rounded-lg bg-primary/5 flex items-center justify-center mb-6 group-hover:bg-primary-container transition-colors">
+                <span
+                  class="material-symbols-outlined text-primary group-hover:text-on-primary-container">schedule</span>
               </div>
-              <h3 class="font-headline-sm text-headline-sm text-primary mb-4" style="font-family:'Source Serif 4',serif">Flexible Timing</h3>
-              <p class="font-body-md text-body-md text-on-surface-variant">We operate 24/7. Schedule your classes at your convenience, no matter which time zone you are in.</p>
+              <h3 class="font-headline-sm text-headline-sm text-primary mb-4"
+                style="font-family:'Source Serif 4',serif">Flexible Timing</h3>
+              <p class="font-body-md text-body-md text-on-surface-variant">We operate 24/7. Schedule your classes at
+                your convenience, no matter which time zone you are in.</p>
             </div>
-            <div class="p-8 bg-white border border-primary/10 rounded-xl hover:border-secondary-fixed transition-all group serene-shadow scholar-card-hover reveal">
-              <div class="w-12 h-12 rounded-lg bg-primary/5 flex items-center justify-center mb-6 group-hover:bg-primary-container transition-colors">
+            <div
+              class="p-8 bg-white border border-primary/10 rounded-xl hover:border-secondary-fixed transition-all group serene-shadow scholar-card-hover reveal">
+              <div
+                class="w-12 h-12 rounded-lg bg-primary/5 flex items-center justify-center mb-6 group-hover:bg-primary-container transition-colors">
                 <span class="material-symbols-outlined text-primary group-hover:text-on-primary-container">groups</span>
               </div>
-              <h3 class="font-headline-sm text-headline-sm text-primary mb-4" style="font-family:'Source Serif 4',serif">One-on-One Classes</h3>
-              <p class="font-body-md text-body-md text-on-surface-variant">Personalized attention ensures faster progress and a deeper understanding of Tajweed and Memorization.</p>
+              <h3 class="font-headline-sm text-headline-sm text-primary mb-4"
+                style="font-family:'Source Serif 4',serif">One-on-One Classes</h3>
+              <p class="font-body-md text-body-md text-on-surface-variant">Personalized attention ensures faster
+                progress and a deeper understanding of Tajweed and Memorization.</p>
             </div>
           </div>
         </div>
@@ -302,10 +403,13 @@
         <div class="container mx-auto px-margin-mobile md:px-margin-desktop">
           <div class="flex flex-col md:flex-row justify-between items-end mb-stack-lg gap-stack-sm reveal">
             <div>
-              <h2 class="font-headline-md text-headline-md text-primary" style="font-family:'Source Serif 4',serif">Popular Courses</h2>
-              <p class="font-body-md text-body-md text-on-surface-variant">Structured pathways for every stage of your Quranic education.</p>
+              <h2 class="font-headline-md text-headline-md text-primary" style="font-family:'Source Serif 4',serif">
+                Popular Courses</h2>
+              <p class="font-body-md text-body-md text-on-surface-variant">Structured pathways for every stage of your
+                Quranic education.</p>
             </div>
-            <a href="#" onclick="navigateTo('courses'); return false;" class="text-primary font-label-md text-label-md flex items-center gap-1 hover:underline">
+            <a href="#" onclick="navigateTo('courses'); return false;"
+              class="text-primary font-label-md text-label-md flex items-center gap-1 hover:underline">
               View All Courses <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
             </a>
           </div>
@@ -313,40 +417,57 @@
             <!-- Featured Course -->
             <div class="md:col-span-8 group relative overflow-hidden rounded-xl shadow-lg reveal" style="height:400px">
               <div class="absolute inset-0 z-0">
-                <div class="bg-cover bg-center w-full h-full transition-transform duration-700 group-hover:scale-110" style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuA2XOiA9ZDyrCeeXP-k31VKCAOpsYIIfzezjozyXMgEH4zro7N2XSbSrJMjye3XO09Hjb_HrJyeqq0Pv19VZvvTcOJ3fOqBV4NnmUmHWUbesWOuPnAflBRfao-Rc8q6hmcTDR7Zz4twToZUhQ6EZkWctVM282N5CtucSmcnv-eCTgkrv4IiKWKyXlag4EQY36Oa4hMJj-zzNNLkUesu4vN_iPUzcHDMAm_r5fTgn0Jvdjb8Lp62PSUyV7r6DrGUcqo7NNJlXR2cV5s')"></div>
+                <div class="bg-cover bg-center w-full h-full transition-transform duration-700 group-hover:scale-110"
+                  style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuA2XOiA9ZDyrCeeXP-k31VKCAOpsYIIfzezjozyXMgEH4zro7N2XSbSrJMjye3XO09Hjb_HrJyeqq0Pv19VZvvTcOJ3fOqBV4NnmUmHWUbesWOuPnAflBRfao-Rc8q6hmcTDR7Zz4twToZUhQ6EZkWctVM282N5CtucSmcnv-eCTgkrv4IiKWKyXlag4EQY36Oa4hMJj-zzNNLkUesu4vN_iPUzcHDMAm_r5fTgn0Jvdjb8Lp62PSUyV7r6DrGUcqo7NNJlXR2cV5s')">
+                </div>
               </div>
               <div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/40 to-transparent z-10"></div>
               <div class="absolute bottom-0 left-0 p-8 z-20 text-on-primary max-w-xl">
                 <div class="flex items-center gap-2 mb-2">
-                  <span class="px-3 py-1 bg-secondary-fixed text-on-secondary-fixed text-caption font-label-md rounded">Featured</span>
+                  <span
+                    class="px-3 py-1 bg-secondary-fixed text-on-secondary-fixed text-caption font-label-md rounded">Featured</span>
                   <span class="text-primary-fixed-dim text-caption font-label-md">12 Months</span>
                 </div>
-                <h3 class="font-headline-md text-headline-md mb-2" style="font-family:'Source Serif 4',serif">Full Quran Memorization (Hifz)</h3>
-                <p class="font-body-md text-body-md text-primary-fixed-dim mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">A rigorous program guided by expert Hafiz tutors with personalized revision plans and daily tracking.</p>
-                <button onclick="navigateTo('enroll')" class="px-6 py-2 bg-white text-primary font-label-md text-label-md rounded hover:bg-secondary-fixed transition-colors">Enroll Now</button>
+                <h3 class="font-headline-md text-headline-md mb-2" style="font-family:'Source Serif 4',serif">Full Quran
+                  Memorization (Hifz)</h3>
+                <p
+                  class="font-body-md text-body-md text-primary-fixed-dim mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  A rigorous program guided by expert Hafiz tutors with personalized revision plans and daily tracking.
+                </p>
+                <button onclick="navigateTo('enroll')"
+                  class="px-6 py-2 bg-white text-primary font-label-md text-label-md rounded hover:bg-secondary-fixed transition-colors">Enroll
+                  Now</button>
               </div>
             </div>
             <!-- Side Courses -->
             <div class="md:col-span-4 flex flex-col gap-gutter">
-              <div class="bg-white p-6 rounded-xl border border-outline-variant hover:border-secondary-fixed transition-all serene-shadow scholar-card-hover reveal">
+              <div
+                class="bg-white p-6 rounded-xl border border-outline-variant hover:border-secondary-fixed transition-all serene-shadow scholar-card-hover reveal">
                 <div class="flex items-start justify-between mb-4">
-                  <span class="material-symbols-outlined text-secondary-fixed text-3xl" style="font-variation-settings:'FILL' 1">menu_book</span>
+                  <span class="material-symbols-outlined text-secondary-fixed text-3xl"
+                    style="font-variation-settings:'FILL' 1">menu_book</span>
                   <span class="text-caption font-label-md text-on-surface-variant">Beginner</span>
                 </div>
-                <h4 class="font-headline-sm text-headline-sm text-primary mb-2" style="font-family:'Source Serif 4',serif">Noorani Qaida</h4>
-                <p class="font-body-md text-body-md text-on-surface-variant mb-4">Master Arabic phonetics and pronunciation for children and adults.</p>
+                <h4 class="font-headline-sm text-headline-sm text-primary mb-2"
+                  style="font-family:'Source Serif 4',serif">Noorani Qaida</h4>
+                <p class="font-body-md text-body-md text-on-surface-variant mb-4">Master Arabic phonetics and
+                  pronunciation for children and adults.</p>
                 <div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
                   <div class="bg-primary w-3/4 h-full rounded-full"></div>
                 </div>
                 <p class="text-caption text-on-surface-variant mt-1">75% Students Enrolled</p>
               </div>
-              <div class="bg-white p-6 rounded-xl border border-outline-variant hover:border-secondary-fixed transition-all serene-shadow scholar-card-hover reveal">
+              <div
+                class="bg-white p-6 rounded-xl border border-outline-variant hover:border-secondary-fixed transition-all serene-shadow scholar-card-hover reveal">
                 <div class="flex items-start justify-between mb-4">
-                  <span class="material-symbols-outlined text-secondary-fixed text-3xl" style="font-variation-settings:'FILL' 1">auto_awesome</span>
+                  <span class="material-symbols-outlined text-secondary-fixed text-3xl"
+                    style="font-variation-settings:'FILL' 1">auto_awesome</span>
                   <span class="text-caption font-label-md text-on-surface-variant">Intermediate</span>
                 </div>
-                <h4 class="font-headline-sm text-headline-sm text-primary mb-2" style="font-family:'Source Serif 4',serif">Tajweed Rules</h4>
-                <p class="font-body-md text-body-md text-on-surface-variant mb-4">Learn the professional rules of Quranic recitation with precision.</p>
+                <h4 class="font-headline-sm text-headline-sm text-primary mb-2"
+                  style="font-family:'Source Serif 4',serif">Tajweed Rules</h4>
+                <p class="font-body-md text-body-md text-on-surface-variant mb-4">Learn the professional rules of
+                  Quranic recitation with precision.</p>
                 <div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
                   <div class="bg-secondary-fixed-dim w-1/2 h-full rounded-full"></div>
                 </div>
@@ -359,21 +480,26 @@
 
       <!-- Stats Counter -->
       <section class="py-stack-md bg-primary text-on-primary">
-        <div class="container mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-2 md:grid-cols-4 gap-gutter text-center">
+        <div
+          class="container mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-2 md:grid-cols-4 gap-gutter text-center">
           <div class="flex flex-col reveal">
-            <span class="font-display-lg text-display-lg text-secondary-fixed" style="font-family:'Source Serif 4',serif">5k+</span>
+            <span class="font-display-lg text-display-lg text-secondary-fixed"
+              style="font-family:'Source Serif 4',serif">5k+</span>
             <span class="font-label-md text-label-md text-primary-fixed-dim">Students Graduated</span>
           </div>
           <div class="flex flex-col reveal">
-            <span class="font-display-lg text-display-lg text-secondary-fixed" style="font-family:'Source Serif 4',serif">50+</span>
+            <span class="font-display-lg text-display-lg text-secondary-fixed"
+              style="font-family:'Source Serif 4',serif">50+</span>
             <span class="font-label-md text-label-md text-primary-fixed-dim">Expert Tutors</span>
           </div>
           <div class="flex flex-col reveal">
-            <span class="font-display-lg text-display-lg text-secondary-fixed" style="font-family:'Source Serif 4',serif">98%</span>
+            <span class="font-display-lg text-display-lg text-secondary-fixed"
+              style="font-family:'Source Serif 4',serif">98%</span>
             <span class="font-label-md text-label-md text-primary-fixed-dim">Success Rate</span>
           </div>
           <div class="flex flex-col reveal">
-            <span class="font-display-lg text-display-lg text-secondary-fixed" style="font-family:'Source Serif 4',serif">30+</span>
+            <span class="font-display-lg text-display-lg text-secondary-fixed"
+              style="font-family:'Source Serif 4',serif">30+</span>
             <span class="font-label-md text-label-md text-primary-fixed-dim">Countries Reached</span>
           </div>
         </div>
@@ -391,589 +517,305 @@
       <!-- Hero for Courses -->
       <section class="py-stack-lg px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
         <div class="text-center md:text-left mb-stack-lg reveal">
-          <div class="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-secondary-container text-on-secondary-container mb-stack-sm">
+          <div
+            class="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-secondary-container text-on-secondary-container mb-stack-sm">
             <span class="material-symbols-outlined text-[18px]" style="font-variation-settings:'FILL' 1">stars</span>
             <span class="font-label-md text-label-md">Scholarly Excellence</span>
           </div>
-          <h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-4" style="font-family:'Source Serif 4',serif">Illuminated Learning Paths</h1>
-          <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Embark on a transformative journey with our curated Quranic and linguistic programs, designed to bring precision and spiritual depth to your studies.</p>
+          <h1
+            class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-4"
+            style="font-family:'Source Serif 4',serif">Illuminated Learning Paths</h1>
+          <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Embark on a transformative journey with
+            our curated Quranic and linguistic programs, designed to bring precision and spiritual depth to your
+            studies.</p>
         </div>
 
         <!-- Course Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
 
           <!-- Card 1: Noorani Qaida -->
-          <div class="group bg-surface-container-lowest border border-outline-variant border-t-[3px] border-t-secondary scholar-card-hover transition-all duration-300 flex flex-col md:flex-row overflow-hidden rounded-lg reveal">
-            <div class="w-full md:w-1/3 h-48 md:h-auto bg-cover bg-center" style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuBHQkwbw4C3mPZx8K9Xc_x7C-aGN0pbQpKArcTwWK4ljIofeGUvXE4H7nSIu1nlHm7A8AVo_UYG8m5q350P3ptf43UlICc0Rs-qlxVOBoRqfXGaJe9arjrH00-0MLZu3bGuQkIQ07LhOnmVddvaVa_SuQQ8IWecXT42GtJx02CQDgANoxI8T7JjSN_YjlaBBl6BEI54gJVzGZvjkgjrr8Vqp-HIadzOBwymIjE8Di7JHkrYcgtrh4agoE1obOQDxK5z2YoL2aBa6rs')"></div>
+          <div
+            class="group bg-surface-container-lowest border border-outline-variant border-t-[3px] border-t-secondary scholar-card-hover transition-all duration-300 flex flex-col md:flex-row overflow-hidden rounded-lg reveal">
+            <div class="w-full md:w-1/3 h-48 md:h-auto bg-cover bg-center"
+              style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuBHQkwbw4C3mPZx8K9Xc_x7C-aGN0pbQpKArcTwWK4ljIofeGUvXE4H7nSIu1nlHm7A8AVo_UYG8m5q350P3ptf43UlICc0Rs-qlxVOBoRqfXGaJe9arjrH00-0MLZu3bGuQkIQ07LhOnmVddvaVa_SuQQ8IWecXT42GtJx02CQDgANoxI8T7JjSN_YjlaBBl6BEI54gJVzGZvjkgjrr8Vqp-HIadzOBwymIjE8Di7JHkrYcgtrh4agoE1obOQDxK5z2YoL2aBa6rs')">
+            </div>
             <div class="p-stack-md flex-1 flex flex-col justify-between">
               <div>
                 <div class="flex justify-between items-start mb-2">
-                  <h3 class="font-headline-sm text-headline-sm text-primary" style="font-family:'Source Serif 4',serif">Noorani Qaida for Beginners</h3>
+                  <h3 class="font-headline-sm text-headline-sm text-primary" style="font-family:'Source Serif 4',serif">
+                    Noorani Qaida for Beginners</h3>
                   <span class="material-symbols-outlined text-secondary">menu_book</span>
                 </div>
-                <p class="font-body-md text-body-md text-on-surface-variant mb-4">Master the foundations of Arabic reading and pronunciation. Perfect for students starting their Quranic journey from the very first letter.</p>
+                <p class="font-body-md text-body-md text-on-surface-variant mb-4">Master the foundations of Arabic
+                  reading and pronunciation. Perfect for students starting their Quranic journey from the very first
+                  letter.</p>
               </div>
               <div class="flex items-center justify-between mt-auto">
                 <div class="flex items-center gap-2 text-on-surface-variant">
                   <span class="material-symbols-outlined text-[20px]">schedule</span>
                   <span class="font-label-md text-label-md">3 - 6 Months</span>
                 </div>
-                <button onclick="navigateTo('enroll')" class="px-6 py-2 border border-secondary text-secondary font-label-md text-label-md rounded-lg hover:bg-secondary-container transition-colors active:scale-95">Enroll</button>
+                <button onclick="navigateTo('enroll')"
+                  class="px-6 py-2 border border-secondary text-secondary font-label-md text-label-md rounded-lg hover:bg-secondary-container transition-colors active:scale-95">Enroll</button>
               </div>
             </div>
           </div>
 
           <!-- Card 2: Tajweed-ul-Quran -->
-          <div class="group bg-surface-container-lowest border border-outline-variant border-t-[3px] border-t-secondary scholar-card-hover transition-all duration-300 flex flex-col md:flex-row overflow-hidden rounded-lg reveal">
-            <div class="w-full md:w-1/3 h-48 md:h-auto bg-cover bg-center" style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuDSdTbBYH-opjlV5L1lmAp9rSTN6tnh4yElBEo-zJgWWFuo1QtL6XrtyKh1mYXr8cWYIVdxpW_7bchKZ0efyQABr3oS6XmEY80W9uVWL2yh7oceUVHA-ufiqyE02yA3oBNud5BKHC36SmJXT1fJ49zdhHzG2WkPmk4pecrUnZZsPWdTm0uIYMIRI7Hqi87lSK2wm84R6kxjxkjeF2HOBYfN9Wjd6i990P8Wn5jU3_8oiRfd-CnSYDCidEYAcAjCcoXn45yfyZivxkM')"></div>
+          <div
+            class="group bg-surface-container-lowest border border-outline-variant border-t-[3px] border-t-secondary scholar-card-hover transition-all duration-300 flex flex-col md:flex-row overflow-hidden rounded-lg reveal">
+            <div class="w-full md:w-1/3 h-48 md:h-auto bg-cover bg-center"
+              style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuDSdTbBYH-opjlV5L1lmAp9rSTN6tnh4yElBEo-zJgWWFuo1QtL6XrtyKh1mYXr8cWYIVdxpW_7bchKZ0efyQABr3oS6XmEY80W9uVWL2yh7oceUVHA-ufiqyE02yA3oBNud5BKHC36SmJXT1fJ49zdhHzG2WkPmk4pecrUnZZsPWdTm0uIYMIRI7Hqi87lSK2wm84R6kxjxkjeF2HOBYfN9Wjd6i990P8Wn5jU3_8oiRfd-CnSYDCidEYAcAjCcoXn45yfyZivxkM')">
+            </div>
             <div class="p-stack-md flex-1 flex flex-col justify-between">
               <div>
                 <div class="flex justify-between items-start mb-2">
-                  <h3 class="font-headline-sm text-headline-sm text-primary" style="font-family:'Source Serif 4',serif">Tajweed-ul-Quran</h3>
+                  <h3 class="font-headline-sm text-headline-sm text-primary" style="font-family:'Source Serif 4',serif">
+                    Tajweed-ul-Quran</h3>
                   <span class="material-symbols-outlined text-secondary">record_voice_over</span>
                 </div>
-                <p class="font-body-md text-body-md text-on-surface-variant mb-4">Refine your recitation with the rules of Tajweed. Focus on correct articulation (Makharij) and rhythmic rules for a beautiful, accurate reading.</p>
+                <p class="font-body-md text-body-md text-on-surface-variant mb-4">Refine your recitation with the rules
+                  of Tajweed. Focus on correct articulation (Makharij) and rhythmic rules for a beautiful, accurate
+                  reading.</p>
               </div>
               <div class="flex items-center justify-between mt-auto">
                 <div class="flex items-center gap-2 text-on-surface-variant">
                   <span class="material-symbols-outlined text-[20px]">schedule</span>
                   <span class="font-label-md text-label-md">6 - 12 Months</span>
                 </div>
-                <button onclick="navigateTo('enroll')" class="px-6 py-2 border border-secondary text-secondary font-label-md text-label-md rounded-lg hover:bg-secondary-container transition-colors active:scale-95">Enroll</button>
+                <button onclick="navigateTo('enroll')"
+                  class="px-6 py-2 border border-secondary text-secondary font-label-md text-label-md rounded-lg hover:bg-secondary-container transition-colors active:scale-95">Enroll</button>
               </div>
             </div>
           </div>
 
           <!-- Card 3: Hifz-e-Quran -->
-          <div class="group bg-surface-container-lowest border border-outline-variant border-t-[3px] border-t-secondary scholar-card-hover transition-all duration-300 flex flex-col md:flex-row overflow-hidden rounded-lg reveal">
-            <div class="w-full md:w-1/3 h-48 md:h-auto bg-cover bg-center" style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuCLWde7bGC6biDVyYl0H8PHTVs0pQqdpdftGIPtQ0e2oCswi0Hjd9HsJSL3Iqdd1TCR3jTnZMFSKr8xprYIt-VilUueJIKBDTOuvF1FjzIPBrrjos3lDlre4aLdCOGEp8YA9i7cPCBlsRRJJ_m323Osld9eTftOohU2z8mLUuF_l1AHomEdYl25aOcnP0wyCO5Vcv_908ERToo6ai16h0lPQZmw3jJOjrDce6C_oWv_Jis_yL_vvu7bQ9yDnzgTUrVesOIXaxLNpDw')"></div>
+          <div
+            class="group bg-surface-container-lowest border border-outline-variant border-t-[3px] border-t-secondary scholar-card-hover transition-all duration-300 flex flex-col md:flex-row overflow-hidden rounded-lg reveal">
+            <div class="w-full md:w-1/3 h-48 md:h-auto bg-cover bg-center"
+              style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuCLWde7bGC6biDVyYl0H8PHTVs0pQqdpdftGIPtQ0e2oCswi0Hjd9HsJSL3Iqdd1TCR3jTnZMFSKr8xprYIt-VilUueJIKBDTOuvF1FjzIPBrrjos3lDlre4aLdCOGEp8YA9i7cPCBlsRRJJ_m323Osld9eTftOohU2z8mLUuF_l1AHomEdYl25aOcnP0wyCO5Vcv_908ERToo6ai16h0lPQZmw3jJOjrDce6C_oWv_Jis_yL_vvu7bQ9yDnzgTUrVesOIXaxLNpDw')">
+            </div>
             <div class="p-stack-md flex-1 flex flex-col justify-between">
               <div>
                 <div class="flex justify-between items-start mb-2">
-                  <h3 class="font-headline-sm text-headline-sm text-primary" style="font-family:'Source Serif 4',serif">Hifz-e-Quran (Memorization)</h3>
+                  <h3 class="font-headline-sm text-headline-sm text-primary" style="font-family:'Source Serif 4',serif">
+                    Hifz-e-Quran (Memorization)</h3>
                   <span class="material-symbols-outlined text-secondary">memory</span>
                 </div>
-                <p class="font-body-md text-body-md text-on-surface-variant mb-4">A structured path for memorizing the Holy Quran. Led by experienced Huffaz with personalized schedules and regular revision sessions.</p>
+                <p class="font-body-md text-body-md text-on-surface-variant mb-4">A structured path for memorizing the
+                  Holy Quran. Led by experienced Huffaz with personalized schedules and regular revision sessions.</p>
               </div>
               <div class="flex items-center justify-between mt-auto">
                 <div class="flex items-center gap-2 text-on-surface-variant">
                   <span class="material-symbols-outlined text-[20px]">schedule</span>
                   <span class="font-label-md text-label-md">2 - 4 Years</span>
                 </div>
-                <button onclick="navigateTo('enroll')" class="px-6 py-2 border border-secondary text-secondary font-label-md text-label-md rounded-lg hover:bg-secondary-container transition-colors active:scale-95">Enroll</button>
+                <button onclick="navigateTo('enroll')"
+                  class="px-6 py-2 border border-secondary text-secondary font-label-md text-label-md rounded-lg hover:bg-secondary-container transition-colors active:scale-95">Enroll</button>
               </div>
             </div>
           </div>
 
           <!-- Card 4: Arabic Language -->
-          <div class="group bg-surface-container-lowest border border-outline-variant border-t-[3px] border-t-secondary scholar-card-hover transition-all duration-300 flex flex-col md:flex-row overflow-hidden rounded-lg reveal">
-            <div class="w-full md:w-1/3 h-48 md:h-auto bg-cover bg-center" style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuBkag5tKJ_ga2rPQXskB2zyvOt5OfeyaU__ZjkSe4Hv4gry2otBsuBDplJ8nlmec-nj4qboe3pfzmzu8u8kFtwK5OBxG0QUe1a11dxsPtUhK_0UF-kJLPSZP-26-fu3gW7_YwwSHy8Q7Rb_PtMnFNI6A2DYFKMw8zvVqg0od1Ii1eu5wGmp9HlsAK8tJWiB3X5vWAGWGVe677iLvBdqIzExllA5CgcebdrBOlUv-x8JTusdSZbcPgtTVKP_p_3tq3mzZBKJBSawISw')"></div>
+          <div
+            class="group bg-surface-container-lowest border border-outline-variant border-t-[3px] border-t-secondary scholar-card-hover transition-all duration-300 flex flex-col md:flex-row overflow-hidden rounded-lg reveal">
+            <div class="w-full md:w-1/3 h-48 md:h-auto bg-cover bg-center"
+              style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuBkag5tKJ_ga2rPQXskB2zyvOt5OfeyaU__ZjkSe4Hv4gry2otBsuBDplJ8nlmec-nj4qboe3pfzmzu8u8kFtwK5OBxG0QUe1a11dxsPtUhK_0UF-kJLPSZP-26-fu3gW7_YwwSHy8Q7Rb_PtMnFNI6A2DYFKMw8zvVqg0od1Ii1eu5wGmp9HlsAK8tJWiB3X5vWAGWGVe677iLvBdqIzExllA5CgcebdrBOlUv-x8JTusdSZbcPgtTVKP_p_3tq3mzZBKJBSawISw')">
+            </div>
             <div class="p-stack-md flex-1 flex flex-col justify-between">
               <div>
                 <div class="flex justify-between items-start mb-2">
-                  <h3 class="font-headline-sm text-headline-sm text-primary" style="font-family:'Source Serif 4',serif">Arabic Language</h3>
+                  <h3 class="font-headline-sm text-headline-sm text-primary" style="font-family:'Source Serif 4',serif">
+                    Arabic Language</h3>
                   <span class="material-symbols-outlined text-secondary">translate</span>
                 </div>
-                <p class="font-body-md text-body-md text-on-surface-variant mb-4">Learn Classical and Modern Standard Arabic. This course bridges the gap between reading and understanding the sacred text's linguistic beauty.</p>
+                <p class="font-body-md text-body-md text-on-surface-variant mb-4">Learn Classical Quranic Arabic to
+                  understand the verses deeply as you recite, focusing on vocabulary and syntax.</p>
               </div>
               <div class="flex items-center justify-between mt-auto">
                 <div class="flex items-center gap-2 text-on-surface-variant">
                   <span class="material-symbols-outlined text-[20px]">schedule</span>
-                  <span class="font-label-md text-label-md">Ongoing Modules</span>
+                  <span class="font-label-md text-label-md">6 - 12 Months</span>
                 </div>
-                <button onclick="navigateTo('enroll')" class="px-6 py-2 border border-secondary text-secondary font-label-md text-label-md rounded-lg hover:bg-secondary-container transition-colors active:scale-95">Enroll</button>
+                <button onclick="navigateTo('enroll')"
+                  class="px-6 py-2 border border-secondary text-secondary font-label-md text-label-md rounded-lg hover:bg-secondary-container transition-colors active:scale-95">Enroll</button>
               </div>
             </div>
           </div>
 
         </div>
-
-        <!-- Special Enrollment Banner -->
-        <section class="mt-stack-lg p-stack-md bg-primary rounded-xl overflow-hidden flex flex-col md:flex-row items-center justify-between gap-6 reveal">
-          <div>
-            <h3 class="font-headline-sm text-headline-sm text-on-primary mb-2" style="font-family:'Source Serif 4',serif">Ready to start your journey?</h3>
-            <p class="font-body-md text-body-md text-on-primary/80">Book a free trial class today and meet our expert scholars.</p>
-          </div>
-          <button onclick="navigateTo('enroll')" class="px-8 py-4 bg-secondary-container text-on-secondary-container font-label-md text-label-md rounded-lg hover:bg-secondary-fixed transition-all active:scale-95 shadow-lg whitespace-nowrap">
-            Enroll Now
-          </button>
-        </section>
       </section>
-
     </section>
     <!-- END: COURSES -->
 
 
     <!-- ========================================= -->
-    <!-- PAGE: ABOUT US                            -->
-    <!-- ========================================= -->
-    <section id="page-about" class="page-section">
-
-      <!-- Mission Section -->
-      <section class="relative py-stack-lg px-margin-mobile overflow-hidden bg-surface-bright">
-        <div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-stack-lg items-center">
-          <div class="order-2 md:order-1 reveal">
-            <span class="text-secondary font-label-md uppercase tracking-widest mb-4 block">Our Sacred Mission</span>
-            <h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-stack-sm" style="font-family:'Source Serif 4',serif">
-              Illuminating Hearts through Divine Knowledge
-            </h1>
-            <p class="font-body-lg text-body-lg text-on-surface-variant mb-stack-md leading-relaxed">
-              At Hamza Quran Academy, we bridge the gap between tradition and technology. Our mission is to provide an accessible, professional, and spiritually enriching environment where students of all ages can master the recitation, memorization, and understanding of the Holy Quran.
-            </p>
-            <div class="flex gap-4 flex-wrap">
-              <button class="bg-primary text-on-primary px-8 py-3 rounded-full font-label-md hover:shadow-lg transition-all active:scale-95">Our Story</button>
-              <button onclick="navigateTo('courses')" class="border-2 border-secondary text-secondary px-8 py-3 rounded-full font-label-md hover:bg-secondary-container/10 transition-all active:scale-95">View Curriculum</button>
-            </div>
-          </div>
-          <div class="order-1 md:order-2 relative aspect-square rounded-full overflow-hidden border-8 border-surface-container shadow-2xl reveal">
-            <div class="absolute inset-0 bg-primary/10 mix-blend-overlay"></div>
-            <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHRMvPyNABtcvn4zp45IIoUWGPvolCHyZ4TF__J-8C0kIXmEpOW7lIw6JS40nG7gU4DcV6zewiJ1cX3BbTwQteNuo6_7F_fhpN6XEb19ZSkwmDyZHHYIwEi0mEyGb8rcaALV35buWtOjUJEZuPAMMWo7XdWVmVixWK-M6z0Tsb3u7lq3XP7JbLbLt2vpnb88AV4tAc4mFZwLUQ6rtzLfRAXyvGDb5V4K8ONT1Ji2fjNs-1OWw78nBe8ulslvfJZCs-DP0mAM-jyMk" alt="Quran on Rehal"/>
-          </div>
-        </div>
-      </section>
-
-      <!-- Stats Grid -->
-      <section class="py-stack-lg px-margin-mobile bg-surface-container-low">
-        <div class="max-w-container-max mx-auto">
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div class="bg-white p-8 rounded-xl border border-primary/10 flex flex-col items-center text-center scholar-card-hover transition-all reveal">
-              <span class="material-symbols-outlined text-secondary text-4xl mb-2" style="font-variation-settings:'FILL' 1">groups</span>
-              <h3 class="font-headline-md text-headline-md text-primary" style="font-family:'Source Serif 4',serif">5,000+</h3>
-              <p class="text-on-surface-variant font-label-md">Global Students</p>
-            </div>
-            <div class="bg-white p-8 rounded-xl border border-primary/10 flex flex-col items-center text-center scholar-card-hover transition-all reveal">
-              <span class="material-symbols-outlined text-secondary text-4xl mb-2" style="font-variation-settings:'FILL' 1">menu_book</span>
-              <h3 class="font-headline-md text-headline-md text-primary" style="font-family:'Source Serif 4',serif">45+</h3>
-              <p class="text-on-surface-variant font-label-md">Specialized Courses</p>
-            </div>
-            <div class="bg-white p-8 rounded-xl border border-primary/10 flex flex-col items-center text-center scholar-card-hover transition-all reveal">
-              <span class="material-symbols-outlined text-secondary text-4xl mb-2" style="font-variation-settings:'FILL' 1">verified</span>
-              <h3 class="font-headline-md text-headline-md text-primary" style="font-family:'Source Serif 4',serif">100%</h3>
-              <p class="text-on-surface-variant font-label-md">Ijazah Certified</p>
-            </div>
-            <div class="bg-white p-8 rounded-xl border border-primary/10 flex flex-col items-center text-center scholar-card-hover transition-all reveal">
-              <span class="material-symbols-outlined text-secondary text-4xl mb-2" style="font-variation-settings:'FILL' 1">language</span>
-              <h3 class="font-headline-md text-headline-md text-primary" style="font-family:'Source Serif 4',serif">30+</h3>
-              <p class="text-on-surface-variant font-label-md">Countries Reached</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Meet Our Tutors -->
-      <section class="py-stack-lg px-margin-mobile">
-        <div class="max-w-container-max mx-auto">
-          <div class="text-center mb-stack-lg reveal">
-            <h2 class="font-headline-md text-headline-md text-primary mb-2" style="font-family:'Source Serif 4',serif">Meet Our Expert Tutors</h2>
-            <p class="text-on-surface-variant max-w-2xl mx-auto">Guided by scholars who embody the prophetic character, our tutors are meticulously selected for their tajweed mastery and pedagogical excellence.</p>
-          </div>
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-gutter">
-            <!-- Tutor 1 -->
-            <div class="group relative bg-white rounded-xl overflow-hidden border border-primary/10 hover:shadow-xl transition-all duration-300 reveal">
-              <div class="h-80 overflow-hidden relative">
-                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5Qe7KIzLkHCDRiV5pNlFzrf3D1IOXPDcEmqx8Ctyc7SWqd93Ax1oXdsstBrlsCAdviBrcwHmVNNmf3ZU7gNAHmTBsc3ROQSgtpR8Hn4OvIxuYtp1mlSCIVqMcIzIVxpnyVpxY3jrWvieWzCNdRtqg9Gq1NS-6EvDyAXaJ3H1LXzXK9zKM1qYzV3KNlIdZYyBR4PVFVUdx9t4JJVT_URoeyOHeTJ56ICTDYyNnMydPEPCYPi1CnPgm_z_T-OYPbbhC0JBn0dQCeOA" alt="Sheikh Ahmad Al-Farsi"/>
-                <div class="absolute top-4 right-4 bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full font-label-md">Hafiz-ul-Quran</div>
-              </div>
-              <div class="p-6">
-                <h4 class="font-headline-sm text-headline-sm text-primary" style="font-family:'Source Serif 4',serif">Sheikh Ahmad Al-Farsi</h4>
-                <p class="text-secondary font-label-md mb-4">Senior Tajweed Specialist</p>
-                <div class="flex items-center gap-2 text-on-surface-variant">
-                  <span class="material-symbols-outlined text-sm">history_edu</span>
-                  <span class="text-caption">15 Years Experience</span>
-                </div>
-              </div>
-            </div>
-            <!-- Tutor 2 -->
-            <div class="group relative bg-white rounded-xl overflow-hidden border border-primary/10 hover:shadow-xl transition-all duration-300 reveal">
-              <div class="h-80 overflow-hidden relative">
-                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCX-ErXCGFcu6mbS6ScDNF4pBmGkqoIzFHpnsFgFUKvCGeNgBI5_w7W25n4PUsZyzfGb9diBvKYBT9W7DgfxgsBU8jyMkKqWlSsxDgE1ploVf06UjdZPpSoH2Aa-ghYK4xnn45sjEfCA8sVko77b-cm4iLpYcJvAu3IBZuHCVHjcl-HqOE4Uw_o-cX-jxjiVcZLcfZpKLWqQYUN-G64bwK5CNwi3c9bE13uzYSMAgkYyQNTygkWqesCgwoesxDnhJOH4DRZ84GYMBQ" alt="Ustadha Maryam Idris"/>
-                <div class="absolute top-4 right-4 bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full font-label-md">Ijazah Holder</div>
-              </div>
-              <div class="p-6">
-                <h4 class="font-headline-sm text-headline-sm text-primary" style="font-family:'Source Serif 4',serif">Ustadha Maryam Idris</h4>
-                <p class="text-secondary font-label-md mb-4">Children's Pedagogy Lead</p>
-                <div class="flex items-center gap-2 text-on-surface-variant">
-                  <span class="material-symbols-outlined text-sm">history_edu</span>
-                  <span class="text-caption">10 Years Experience</span>
-                </div>
-              </div>
-            </div>
-            <!-- Tutor 3 -->
-            <div class="group relative bg-white rounded-xl overflow-hidden border border-primary/10 hover:shadow-xl transition-all duration-300 reveal">
-              <div class="h-80 overflow-hidden relative">
-                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7JSo1aE6sRtZWE3uAG8ebcgu9lCmwEpAAd3STaofK5i5xOQeuWaxOiy6XjLbNMJnv1CH0Sekt1H22htfbdKEh6OrAA4z5cCGFNmUiqjtEYdvZSeysnXiM3hHtZskZPo2wMxqJvrMGozmc5rBUQMvUfoMraus3MPH0M_8JI1hksDTwZmHrLsmbT6vhiPzWDsi6Yz2Des08jnI5-OksfygQj2x8WGysRCRTxqQzz6brud7hC-XF0f9bcuajvetTPoWXGMPQEdwVmeY" alt="Dr. Omar Suleiman"/>
-                <div class="absolute top-4 right-4 bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full font-label-md">PhD in Tafsir</div>
-              </div>
-              <div class="p-6">
-                <h4 class="font-headline-sm text-headline-sm text-primary" style="font-family:'Source Serif 4',serif">Dr. Omar Suleiman</h4>
-                <p class="text-secondary font-label-md mb-4">Director of Quranic Sciences</p>
-                <div class="flex items-center gap-2 text-on-surface-variant">
-                  <span class="material-symbols-outlined text-sm">history_edu</span>
-                  <span class="text-caption">12 Years Experience</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Testimonials -->
-      <section class="py-stack-lg px-margin-mobile bg-primary text-on-primary">
-        <div class="max-w-container-max mx-auto">
-          <div class="flex flex-col md:flex-row justify-between items-end mb-stack-lg gap-4 reveal">
-            <div class="max-w-xl">
-              <h2 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-primary mb-4" style="font-family:'Source Serif 4',serif">Voices of Enlightenment</h2>
-              <p class="text-primary-fixed-dim font-body-lg">Hear from our students and parents about their transformative journey with the Book of Allah.</p>
-            </div>
-            <div class="flex gap-4">
-              <button id="prevTest" class="w-12 h-12 rounded-full border border-primary-fixed-dim/30 flex items-center justify-center hover:bg-primary-container transition-colors">
-                <span class="material-symbols-outlined">arrow_back</span>
-              </button>
-              <button id="nextTest" class="w-12 h-12 rounded-full border border-primary-fixed-dim/30 flex items-center justify-center hover:bg-primary-container transition-colors">
-                <span class="material-symbols-outlined">arrow_forward</span>
-              </button>
-            </div>
-          </div>
-          <div class="testimonial-slider pb-8" id="testimonial-slider">
-            <!-- Testimonial 1 -->
-            <div class="testimonial-card bg-primary-container/40 p-8 rounded-2xl border border-primary-fixed-dim/10 flex flex-col justify-between">
-              <div>
-                <div class="flex gap-1 text-secondary-fixed mb-6">
-                  <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span>
-                  <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span>
-                  <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span>
-                  <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span>
-                  <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span>
-                </div>
-                <p class="font-headline-sm italic text-primary-fixed mb-8 leading-relaxed" style="font-family:'Source Serif 4',serif">"The tajweed sessions are life-changing. My teacher is patient, knowledgeable, and has helped me correct mistakes I've made for years. The platform is seamless and the learning environment is truly blessed."</p>
-              </div>
-              <div class="flex items-center gap-4">
-                <div class="w-14 h-14 rounded-full overflow-hidden border-2 border-secondary-fixed">
-                  <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMwwAg0StD9vsO6ZipC525-vh3FUicfXECvrdyqrRDpiMTVpLFohABj5dwyGBib_kH7DAI4ohZgNodCZe-o4tlgYvyzpYbxgqG2fz_Op_56oszP91lj-6fYbgw_qVCXF2KOSKa2aNZG3kfXvrxFub-eVlwPGadGijkAyGOBwL27i3_iW9-9FZpKkEOX9wx8iJlVd5pSjpNom5rCZ6AC5MF84xoWcgwZ72Aiz3n4h1KZOtv0Zcdp-M3eFZOsQH7786fS3cTc7VvnMM" alt="Zaid K."/>
-                </div>
-                <div>
-                  <h5 class="font-label-md text-white">Zaid K.</h5>
-                  <p class="text-caption opacity-70">Memorization Student, UK</p>
-                </div>
-              </div>
-            </div>
-            <!-- Testimonial 2 -->
-            <div class="testimonial-card bg-primary-container/40 p-8 rounded-2xl border border-primary-fixed-dim/10 flex flex-col justify-between">
-              <div>
-                <div class="flex gap-1 text-secondary-fixed mb-6">
-                  <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span>
-                  <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span>
-                  <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span>
-                  <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span>
-                  <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span>
-                </div>
-                <p class="font-headline-sm italic text-primary-fixed mb-8 leading-relaxed" style="font-family:'Source Serif 4',serif">"As a parent, finding a safe and professional online environment for my children was paramount. Hamza Academy exceeded all expectations. My kids look forward to every class!"</p>
-              </div>
-              <div class="flex items-center gap-4">
-                <div class="w-14 h-14 rounded-full overflow-hidden border-2 border-secondary-fixed">
-                  <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5GO9cRGuxcsYqfTIk0o831Fad9IMmCKSqL_nLK_nwsVvjmyqE5WrAAucS6yDL3Fce0eSxnhQqpOzyp6es2DW64yLjxl8UBPLtaCsuPVL0IhdNLXK8wbegjgviFMVRMeEC5O8aIo1U_t7MCFHH1eQGTfhuZyYXAKT2HfKYyKEg0dUvD_Xfrhm5Z3aVqAN2CR9ybQ76xkUAD93F9yoKD8ct5aDwikJrK8qawQijCcfnCHPyi6USi5H7Cvd9_P1epOOHUEJYN8XFUrQ" alt="Fatima A."/>
-                </div>
-                <div>
-                  <h5 class="font-label-md text-white">Fatima A.</h5>
-                  <p class="text-caption opacity-70">Parent, Canada</p>
-                </div>
-              </div>
-            </div>
-            <!-- Testimonial 3 -->
-            <div class="testimonial-card bg-primary-container/40 p-8 rounded-2xl border border-primary-fixed-dim/10 flex flex-col justify-between">
-              <div>
-                <div class="flex gap-1 text-secondary-fixed mb-6">
-                  <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span>
-                  <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span>
-                  <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span>
-                  <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span>
-                  <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span>
-                </div>
-                <p class="font-headline-sm italic text-primary-fixed mb-8 leading-relaxed" style="font-family:'Source Serif 4',serif">"The level of expertise here is unmatched. I've achieved my Ijazah in Tajweed within 2 years of consistent study. The scholarship and dedication of the staff are unparalleled."</p>
-              </div>
-              <div class="flex items-center gap-4">
-                <div class="w-14 h-14 rounded-full overflow-hidden border-2 border-secondary-fixed">
-                  <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0kd9xPwXTJhLd9E-Q6EdKfSITin27stoP7FvXj8u5aOuCC46JQ9W_hiB-ObVDQRuWvTuRRq_PU7g2YSwcJ6EJZl-6m78Y6Q7lj7UzRE7dtc19qsrHfhhIcK-oRwThIIttu8jDPIcKSL74T96LR_Xcog9SGgWFd8zOI7eN0FicOsl_jeAEUinQvJ4-2B8IW4zDdo15X0cqAMiENqqo85NlpI2ol0fEXkQePtUu9bTzW5hT2Q7X9UK9krbwD-yJ-F1JROg1ITOuKGo" alt="Ibrahim J."/>
-                </div>
-                <div>
-                  <h5 class="font-label-md text-white">Ibrahim J.</h5>
-                  <p class="text-caption opacity-70">Ijazah Graduate, UAE</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- CTA -->
-      <section class="py-stack-lg px-margin-mobile">
-        <div class="max-w-3xl mx-auto text-center reveal">
-          <h2 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-6" style="font-family:'Source Serif 4',serif">Ready to Start Your Journey?</h2>
-          <p class="font-body-lg text-on-surface-variant mb-8">Join thousands of students worldwide and begin your path towards mastering the Word of Allah with guidance from world-class scholars.</p>
-          <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <button onclick="navigateTo('enroll')" class="bg-primary text-on-primary px-10 py-4 rounded-full font-label-md hover:shadow-xl transition-all active:scale-95">Enroll Now</button>
-            <button class="bg-secondary text-on-secondary px-10 py-4 rounded-full font-label-md hover:shadow-xl transition-all active:scale-95">Book Free Trial</button>
-          </div>
-        </div>
-      </section>
-
-    </section>
-    <!-- END: ABOUT -->
-
-
-    <!-- ========================================= -->
-    <!-- PAGE: ENROLL NOW                          -->
+    <!-- PAGE: ENROLL                              -->
     <!-- ========================================= -->
     <section id="page-enroll" class="page-section">
-      <section class="py-stack-lg px-margin-mobile bg-surface-bright">
-        <div class="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-stack-lg items-start">
-          <!-- Left Info -->
-          <div class="reveal">
-            <span class="text-secondary font-label-md uppercase tracking-widest mb-4 block">Begin Your Journey</span>
-            <h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-stack-sm" style="font-family:'Source Serif 4',serif">
-              Enroll in Hamza Quran Academy
-            </h1>
-            <p class="font-body-lg text-body-lg text-on-surface-variant mb-stack-md">
-              Register today and get access to a free 3-day trial class. Our team will contact you within 24 hours to schedule your first session.
-            </p>
-            <!-- Benefits -->
-            <div class="flex flex-col gap-4">
-              <div class="flex items-start gap-4">
-                <div class="w-10 h-10 min-w-[40px] rounded-full bg-primary flex items-center justify-center">
-                  <span class="material-symbols-outlined text-on-primary text-[20px]" style="font-variation-settings:'FILL' 1">check_circle</span>
-                </div>
-                <div>
-                  <h4 class="font-label-md text-label-md text-primary">Free Trial Class</h4>
-                  <p class="font-body-md text-body-md text-on-surface-variant">3 days free with any certified tutor of your choice.</p>
-                </div>
-              </div>
-              <div class="flex items-start gap-4">
-                <div class="w-10 h-10 min-w-[40px] rounded-full bg-primary flex items-center justify-center">
-                  <span class="material-symbols-outlined text-on-primary text-[20px]" style="font-variation-settings:'FILL' 1">check_circle</span>
-                </div>
-                <div>
-                  <h4 class="font-label-md text-label-md text-primary">Flexible Schedules</h4>
-                  <p class="font-body-md text-body-md text-on-surface-variant">Choose a time that works for your schedule — 24/7 availability.</p>
-                </div>
-              </div>
-              <div class="flex items-start gap-4">
-                <div class="w-10 h-10 min-w-[40px] rounded-full bg-primary flex items-center justify-center">
-                  <span class="material-symbols-outlined text-on-primary text-[20px]" style="font-variation-settings:'FILL' 1">check_circle</span>
-                </div>
-                <div>
-                  <h4 class="font-label-md text-label-md text-primary">One-on-One Attention</h4>
-                  <p class="font-body-md text-body-md text-on-surface-variant">Every student gets a dedicated personal tutor for maximum progress.</p>
-                </div>
-              </div>
-              <div class="flex items-start gap-4">
-                <div class="w-10 h-10 min-w-[40px] rounded-full bg-secondary flex items-center justify-center">
-                  <span class="material-symbols-outlined text-on-secondary text-[20px]" style="font-variation-settings:'FILL' 1">workspace_premium</span>
-                </div>
-                <div>
-                  <h4 class="font-label-md text-label-md text-primary">Ijazah Certified Tutors</h4>
-                  <p class="font-body-md text-body-md text-on-surface-variant">All teachers hold authentic Ijazah certificates from renowned scholars.</p>
-                </div>
-              </div>
-            </div>
+      <div class="max-w-md mx-auto py-12 px-4">
+        <h2 class="text-2xl font-bold text-primary mb-4" style="font-family:'Source Serif 4',serif">Enroll in Academy
+        </h2>
+        <p class="text-on-surface-variant mb-6">Fill out this form to start your 3-day free trial classes.</p>
+        <form class="space-y-4">
+          <div>
+            <label class="block text-sm font-medium text-on-surface-variant">Full Name</label>
+            <input type="text"
+              class="mt-1 block w-full rounded-md border-outline-variant shadow-sm focus:border-primary focus:ring-primary"
+              required>
           </div>
-
-          <!-- Enrollment Form -->
-          <div class="bg-white rounded-2xl p-8 shadow-lg border border-primary/10 serene-shadow reveal">
-            <h2 class="font-headline-sm text-headline-sm text-primary mb-6" style="font-family:'Source Serif 4',serif">Registration Form</h2>
-            <form id="enroll-form" class="flex flex-col gap-5" onsubmit="handleEnroll(event)">
-              <!-- Name -->
-              <div class="flex flex-col gap-1">
-                <label class="font-label-md text-label-md text-on-surface-variant" for="enroll-name">Full Name *</label>
-                <input id="enroll-name" type="text" required placeholder="Enter your full name"
-                  class="w-full bg-surface-container-low px-4 py-3 border-b-2 border-outline-variant focus:border-primary outline-none font-body-md text-body-md text-on-surface transition-colors rounded-t-lg"/>
-              </div>
-              <!-- Email -->
-              <div class="flex flex-col gap-1">
-                <label class="font-label-md text-label-md text-on-surface-variant" for="enroll-email">Email Address *</label>
-                <input id="enroll-email" type="email" required placeholder="your@email.com"
-                  class="w-full bg-surface-container-low px-4 py-3 border-b-2 border-outline-variant focus:border-primary outline-none font-body-md text-body-md text-on-surface transition-colors rounded-t-lg"/>
-              </div>
-              <!-- Phone -->
-              <div class="flex flex-col gap-1">
-                <label class="font-label-md text-label-md text-on-surface-variant" for="enroll-phone">WhatsApp / Phone *</label>
-                <input id="enroll-phone" type="tel" required placeholder="+1 234 567 8900"
-                  class="w-full bg-surface-container-low px-4 py-3 border-b-2 border-outline-variant focus:border-primary outline-none font-body-md text-body-md text-on-surface transition-colors rounded-t-lg"/>
-              </div>
-              <!-- Course -->
-              <div class="flex flex-col gap-1">
-                <label class="font-label-md text-label-md text-on-surface-variant" for="enroll-course">Select Course *</label>
-                <select id="enroll-course" required
-                  class="w-full bg-surface-container-low px-4 py-3 border-b-2 border-outline-variant focus:border-primary outline-none font-body-md text-body-md text-on-surface transition-colors rounded-t-lg appearance-none cursor-pointer">
-                  <option value="" disabled selected>Choose a course...</option>
-                  <option value="noorani">Noorani Qaida (Beginners)</option>
-                  <option value="tajweed">Tajweed-ul-Quran</option>
-                  <option value="hifz">Hifz-e-Quran (Memorization)</option>
-                  <option value="arabic">Arabic Language</option>
-                </select>
-              </div>
-              <!-- Message -->
-              <div class="flex flex-col gap-1">
-                <label class="font-label-md text-label-md text-on-surface-variant" for="enroll-msg">Additional Notes</label>
-                <textarea id="enroll-msg" rows="3" placeholder="Tell us about your experience level or any special requirements..."
-                  class="w-full bg-surface-container-low px-4 py-3 border-b-2 border-outline-variant focus:border-primary outline-none font-body-md text-body-md text-on-surface transition-colors rounded-t-lg resize-none"></textarea>
-              </div>
-              <button type="submit" id="enroll-btn" class="w-full bg-primary text-on-primary font-label-md text-label-md py-4 rounded-lg hover:shadow-lg transition-all active:scale-95 mt-2">
-                Submit Registration
-              </button>
-              <div id="enroll-success" class="hidden text-center p-4 bg-primary-fixed rounded-lg">
-                <span class="material-symbols-outlined text-primary text-3xl mb-2" style="font-variation-settings:'FILL' 1">check_circle</span>
-                <p class="font-headline-sm text-primary" style="font-family:'Source Serif 4',serif">Registration Successful!</p>
-                <p class="font-body-md text-on-surface-variant">We'll contact you within 24 hours to confirm your trial class.</p>
-              </div>
-            </form>
+          <div>
+            <label class="block text-sm font-medium text-on-surface-variant">Email Address</label>
+            <input type="email"
+              class="mt-1 block w-full rounded-md border-outline-variant shadow-sm focus:border-primary focus:ring-primary"
+              required>
           </div>
-        </div>
-      </section>
+          <div>
+            <label class="block text-sm font-medium text-on-surface-variant">Course Interest</label>
+            <select
+              class="mt-1 block w-full rounded-md border-outline-variant shadow-sm focus:border-primary focus:ring-primary">
+              <option>Noorani Qaida</option>
+              <option>Tajweed-ul-Quran</option>
+              <option>Hifz-e-Quran</option>
+              <option>Arabic Language</option>
+            </select>
+          </div>
+          <button type="submit"
+            class="w-full py-3 bg-primary text-white font-medium rounded-lg hover:bg-primary-container transition-colors">Submit
+            Registration</button>
+        </form>
+      </div>
     </section>
     <!-- END: ENROLL -->
 
   </main>
 
-  <!-- ===== FOOTER ===== -->
-  <footer class="w-full bg-primary text-on-primary flex flex-col items-center gap-stack-sm py-stack-md px-margin-mobile text-center">
-    <div class="flex flex-col items-center gap-2 mb-4">
-      <button onclick="navigateTo('home')" class="font-headline-sm text-headline-sm text-on-primary hover:text-secondary-fixed transition-colors" style="font-family:'Source Serif 4',serif">Hamza Quran Academy</button>
-      <div class="h-[2px] w-16 bg-secondary-fixed rounded-full"></div>
+  <!-- ===== NEW FOOTER & CONTACT SECTION ===== -->
+  <footer id="contact-section" class="bg-primary text-on-primary mt-16 border-t border-white/10">
+    <div
+      class="container mx-auto px-margin-mobile md:px-margin-desktop py-12 grid grid-cols-1 md:grid-cols-3 gap-gutter">
+
+      <!-- Column 1: About Academy -->
+      <div class="flex flex-col gap-3">
+        <h3 class="font-headline-sm text-headline-sm text-secondary-fixed" style="font-family:'Source Serif 4',serif">
+          Hamza Quran Academy</h3>
+        <p class="text-primary-fixed-dim text-body-md max-w-sm">
+          A leading online platform dedicated to delivering authentic, personalized, and high-quality Quranic education
+          worldwide.
+        </p>
+      </div>
+
+      <!-- Column 2: Quick Links -->
+      <div class="flex flex-col gap-2">
+        <h4 class="font-label-md text-label-md uppercase tracking-wider text-secondary-fixed mb-2">Quick Navigation</h4>
+        <a href="#" onclick="navigateTo('home'); return false;"
+          class="text-primary-fixed-dim hover:text-white transition-colors">Home</a>
+        <a href="#" onclick="navigateTo('courses'); return false;"
+          class="text-primary-fixed-dim hover:text-white transition-colors">Our Courses</a>
+        <a href="#" onclick="navigateTo('enroll'); return false;"
+          class="text-primary-fixed-dim hover:text-white transition-colors">Admission / Enroll</a>
+      </div>
+
+      <!-- Column 3: Contact Details -->
+      <div class="flex flex-col gap-4">
+        <h4 class="font-label-md text-label-md uppercase tracking-wider text-secondary-fixed">Contact Information</h4>
+
+        <!-- Phone Number Connection -->
+        <a href="https://wa.me/923177882405" target="_blank"
+          class="flex items-center gap-3 group text-primary-fixed-dim hover:text-white transition-colors">
+          <span
+            class="material-symbols-outlined text-secondary-fixed group-hover:scale-110 transition-transform">call</span>
+          <span class="font-body-md">+92 317 7882405 (WhatsApp)</span>
+        </a>
+
+        <!-- Email Connection -->
+        <a href="mailto:hamzaquranacademey786@gmail.com"
+          class="flex items-center gap-3 group text-primary-fixed-dim hover:text-white transition-colors">
+          <span
+            class="material-symbols-outlined text-secondary-fixed group-hover:scale-110 transition-transform">mail</span>
+          <span class="font-body-md">hamzaquranacademey786@gmail.com</span>
+        </a>
+      </div>
+
     </div>
-    <div class="flex flex-wrap justify-center gap-gutter mb-4">
-      <a href="#" onclick="navigateTo('home'); return false;" class="font-caption text-caption text-on-primary opacity-80 hover:text-secondary-fixed transition-colors">Home</a>
-      <a href="#" onclick="navigateTo('courses'); return false;" class="font-caption text-caption text-on-primary opacity-80 hover:text-secondary-fixed transition-colors">Courses</a>
-      <a href="#" onclick="navigateTo('about'); return false;" class="font-caption text-caption text-on-primary opacity-80 hover:text-secondary-fixed transition-colors">About Us</a>
-      <a href="#" onclick="navigateTo('enroll'); return false;" class="font-caption text-caption text-on-primary opacity-80 hover:text-secondary-fixed transition-colors">Enroll Now</a>
+
+    <!-- Copyright -->
+    <div class="border-t border-white/5 py-6 text-center text-caption text-primary-fixed-dim">
+      &copy; 2026 Hamza Quran Academy. All rights reserved.
     </div>
-    <div class="flex gap-4 mb-4">
-      <a href="#" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-all">
-        <span class="material-symbols-outlined text-[20px]">share</span>
-      </a>
-      <a href="#" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-all">
-        <span class="material-symbols-outlined text-[20px]">language</span>
-      </a>
-      <a href="#" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-all">
-        <span class="material-symbols-outlined text-[20px]">mail</span>
-      </a>
-    </div>
-    <p class="font-caption text-caption opacity-60">© 2024 Hamza Quran Academy. All rights reserved.</p>
   </footer>
 
+  <!-- ===== JAVASCRIPT FOR ROUTING & DRAWER ===== -->
   <script>
-    // ===== PAGE NAVIGATION =====
-    let currentPage = 'home';
+    // Navigation / Page Router Function
+    function navigateTo(pageId) {
+      // Hide all sections
+      document.querySelectorAll('.page-section').forEach(sec => sec.classList.remove('active'));
 
-    function navigateTo(page) {
-      // Hide all pages
-      document.querySelectorAll('.page-section').forEach(p => p.classList.remove('active'));
-      // Show target page
-      const target = document.getElementById('page-' + page);
-      if (target) {
-        target.classList.add('active');
-        currentPage = page;
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-        // Update nav links
-        updateNavLinks(page);
-        // Re-run reveal animations
-        setTimeout(initReveal, 100);
+      // Show targeted section
+      const targetSection = document.getElementById('page-' + pageId);
+      if (targetSection) {
+        targetSection.classList.add('active');
       }
-      // Close drawer if open
-      closeDrawer();
-    }
 
-    function updateNavLinks(page) {
+      // Update Active Navigation Links Style
       document.querySelectorAll('.nav-link').forEach(link => {
-        link.classList.remove('active-link');
-        if (link.dataset.page === page) link.classList.add('active-link');
-      });
-      document.querySelectorAll('.drawer-link').forEach(link => {
-        link.classList.remove('bg-primary-container', 'text-on-primary-container');
-        link.classList.add('text-on-surface-variant', 'hover:bg-surface-variant');
-        if (link.dataset.page === page) {
-          link.classList.add('bg-primary-container', 'text-on-primary-container');
-          link.classList.remove('text-on-surface-variant', 'hover:bg-surface-variant');
+        if (link.getAttribute('data-page') === pageId) {
+          link.classList.add('active-link');
+        } else {
+          link.classList.remove('active-link');
         }
       });
+
+      // Close mobile drawer on link click
+      toggleDrawer(false);
+
+      // Scroll to top of the page smoothly
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    // Attach nav link events
-    document.querySelectorAll('.nav-link, .drawer-link').forEach(link => {
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
-        navigateTo(this.dataset.page);
-      });
-    });
-
-    document.getElementById('logo-btn').addEventListener('click', () => navigateTo('home'));
-
-    // ===== DRAWER =====
+    // Mobile Drawer Interactions
     const drawerTrigger = document.getElementById('drawer-trigger');
-    const drawer = document.getElementById('drawer');
     const drawerOverlay = document.getElementById('drawer-overlay');
+    const drawer = document.getElementById('drawer');
 
-    function openDrawer() {
-      drawer.classList.remove('-translate-x-full');
-      drawerOverlay.classList.remove('hidden', 'opacity-0');
-      setTimeout(() => drawerOverlay.classList.add('opacity-100'), 10);
-    }
-
-    function closeDrawer() {
-      drawer.classList.add('-translate-x-full');
-      drawerOverlay.classList.remove('opacity-100');
-      setTimeout(() => drawerOverlay.classList.add('hidden'), 300);
-    }
-
-    drawerTrigger.addEventListener('click', () => {
-      if (drawer.classList.contains('-translate-x-full')) openDrawer();
-      else closeDrawer();
-    });
-    drawerOverlay.addEventListener('click', closeDrawer);
-
-    // ===== HEADER SCROLL EFFECT =====
-    const topbar = document.getElementById('topbar');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 20) {
-        topbar.classList.add('shadow-md', 'bg-surface/95', 'backdrop-blur-md');
+    function toggleDrawer(open) {
+      if (open) {
+        drawerOverlay.classList.remove('hidden');
+        setTimeout(() => drawerOverlay.classList.add('opacity-100'), 10);
+        drawer.classList.remove('-translate-x-full');
       } else {
-        topbar.classList.remove('shadow-md', 'bg-surface/95', 'backdrop-blur-md');
+        drawerOverlay.classList.remove('opacity-100');
+        drawer.classList.add('-translate-x-full');
+        setTimeout(() => drawerOverlay.classList.add('hidden'), 300);
       }
-    });
-
-    // ===== TESTIMONIAL SLIDER =====
-    const slider = document.getElementById('testimonial-slider');
-    document.getElementById('prevTest').addEventListener('click', () => slider.scrollBy({ left: -400, behavior: 'smooth' }));
-    document.getElementById('nextTest').addEventListener('click', () => slider.scrollBy({ left: 400, behavior: 'smooth' }));
-
-    // ===== ENROLL FORM =====
-    function handleEnroll(e) {
-      e.preventDefault();
-      document.getElementById('enroll-form').querySelectorAll('input,select,textarea,button[type=submit]').forEach(el => el.disabled = true);
-      document.getElementById('enroll-success').classList.remove('hidden');
     }
 
-    // ===== SCROLL REVEAL =====
-    function initReveal() {
-      const reveals = document.querySelectorAll('.page-section.active .reveal');
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.1 });
-      reveals.forEach(el => {
-        el.classList.remove('visible');
-        observer.observe(el);
+    if (drawerTrigger) drawerTrigger.addEventListener('click', () => toggleDrawer(true));
+    if (drawerOverlay) drawerOverlay.addEventListener('click', () => toggleDrawer(false));
+
+    // Map desktop & drawer links to routing system
+    document.querySelectorAll('[data-page]').forEach(element => {
+      element.addEventListener('click', (e) => {
+        e.preventDefault();
+        const page = element.getAttribute('data-page');
+        navigateTo(page);
       });
-    }
-
-    // ===== INIT =====
-    window.addEventListener('load', () => {
-      navigateTo('home');
     });
+
+    // Simple scroll reveal setup
+    window.addEventListener('scroll', () => {
+      document.querySelectorAll('.reveal').forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 50) {
+          el.classList.add('visible');
+        }
+      });
+    });
+    // Trigger scroll on load
+    window.dispatchEvent(new Event('scroll'));
   </script>
 
 </body>
+
 </html>
