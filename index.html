@@ -644,50 +644,61 @@
           </div>
 
         </div>
+
+        <!-- Dynamic Courses from Firestore -->
+        <div class="mt-stack-lg">
+          <div class="text-center mb-stack-lg">
+            <h2 class="font-headline-md text-headline-md text-primary mb-2" style="font-family:'Source Serif 4',serif">More Courses from Academy</h2>
+            <p class="font-body-md text-body-md text-on-surface-variant">Explore additional courses added by our admin team.</p>
+          </div>
+          <div id="dynamicCourses" class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+            <!-- Courses load here from Firestore -->
+          </div>
+        </div>
+
       </section>
     </section>
     <!-- END: COURSES -->
 
 
-    <!-- ========================================= -->
-    <!-- PAGE: ENROLL                              -->
-    <!-- ========================================= -->
-    <section id="page-enroll" class="page-section">
-      <div class="max-w-md mx-auto py-12 px-4">
-        <h2 class="text-2xl font-bold text-primary mb-4" style="font-family:'Source Serif 4',serif">Enroll in Academy
-        </h2>
-        <p class="text-on-surface-variant mb-6">Fill out this form to start your 3-day free trial classes.</p>
-        <form class="space-y-4">
+    <section id="enroll-section" class="py-12">
+      <div class="max-w-md mx-auto px-4">
+        <h2 class="text-2xl font-bold text-primary mb-4">Enroll in Academy</h2>
+        <p class="text-body-md text-surface-variant mb-6">Fill out this form to start your 3-day free trial classes.</p>
+
+        <form id="enrollmentForm" class="flex flex-col gap-4">
           <div>
-            <label class="block text-sm font-medium text-on-surface-variant">Full Name</label>
-            <input type="text"
-              class="mt-1 block w-full rounded-md border-outline-variant shadow-sm focus:border-primary focus:ring-primary"
-              required>
+            <label class="block font-medium text-on-surface-variant mb-1">Full Name</label>
+            <input type="text" id="studentName" required
+              class="w-full p-2.5 rounded-md border border-outline-variant shadow-sm focus:border-primary focus:ring-primary bg-transparent text-white"
+              placeholder="Your Name">
           </div>
+
           <div>
-            <label class="block text-sm font-medium text-on-surface-variant">Email Address</label>
-            <input type="email"
-              class="mt-1 block w-full rounded-md border-outline-variant shadow-sm focus:border-primary focus:ring-primary"
-              required>
+            <label class="block font-medium text-on-surface-variant mb-1">Email Address</label>
+            <input type="email" id="studentEmail" required
+              class="w-full p-2.5 rounded-md border border-outline-variant shadow-sm focus:border-primary focus:ring-primary bg-transparent text-white"
+              placeholder="Your Email">
           </div>
+
           <div>
-            <label class="block text-sm font-medium text-on-surface-variant">Course Interest</label>
-            <select
-              class="mt-1 block w-full rounded-md border-outline-variant shadow-sm focus:border-primary focus:ring-primary">
-              <option>Noorani Qaida</option>
-              <option>Tajweed-ul-Quran</option>
-              <option>Hifz-e-Quran</option>
-              <option>Arabic Language</option>
+            <label class="block font-medium text-on-surface-variant mb-1">Course Interest</label>
+            <select id="courseInterest"
+              class="w-full p-2.5 rounded-md border border-outline-variant shadow-sm focus:border-primary focus:ring-primary bg-neutral-900 text-white">
+              <option value="Noorani Qaida">Noorani Qaida</option>
+              <option value="Quran Reading">Quran Reading with Tajweed</option>
+              <option value="Quran Memorization">Quran Memorization (Hifz)</option>
+              <option value="Islamic Studies">Islamic Studies</option>
             </select>
           </div>
+
           <button type="submit"
-            class="w-full py-3 bg-primary text-white font-medium rounded-lg hover:bg-primary-container transition-colors">Submit
-            Registration</button>
+            class="mt-2 w-full p-3 bg-primary text-on-primary font-bold rounded-md hover:bg-primary-hover transition-colors shadow-md">
+            Submit Registration
+          </button>
         </form>
       </div>
     </section>
-    <!-- END: ENROLL -->
-
   </main>
 
   <!-- ===== NEW FOOTER & CONTACT SECTION ===== -->
@@ -714,6 +725,11 @@
           class="text-primary-fixed-dim hover:text-white transition-colors">Our Courses</a>
         <a href="#" onclick="navigateTo('enroll'); return false;"
           class="text-primary-fixed-dim hover:text-white transition-colors">Admission / Enroll</a>
+        <a href="admin.html"
+          class="text-primary-fixed-dim hover:text-secondary-fixed transition-colors flex items-center gap-1">
+          <span class="material-symbols-outlined text-[16px]">admin_panel_settings</span>
+          Admin Panel
+        </a>
       </div>
 
       <!-- Column 3: Contact Details -->
@@ -843,6 +859,112 @@
     });
     // Trigger scroll on load
     window.dispatchEvent(new Event('scroll'));
+  </script>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+    import { getFirestore, collection, addDoc, getDocs, serverTimestamp, orderBy, query } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyDpvjuOmWwGf7II5vxXdCjn4ddir2LBGxs",
+      authDomain: "hamza-quran-academy.firebaseapp.com",
+      projectId: "hamza-quran-academy",
+      storageBucket: "hamza-quran-academy.firebasestorage.app",
+      messagingSenderId: "840458228285",
+      appId: "1:840458228285:web:b2997b7babc57d057d5054"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    // Load Courses from Firestore
+    async function loadCourses() {
+      const container = document.getElementById('dynamicCourses');
+      if (!container) return;
+
+      try {
+        const q = query(collection(db, "courses"), orderBy("createdAt", "desc"));
+        const snapshot = await getDocs(q);
+
+        if (snapshot.empty) {
+          container.innerHTML = `
+            <p class="text-on-surface-variant font-body-md col-span-full text-center py-10 border border-dashed border-outline-variant rounded-xl">
+              No additional courses available yet.
+            </p>`;
+          return;
+        }
+
+        container.innerHTML = snapshot.docs.map(docSnap => {
+          const c = docSnap.data();
+          return `
+          <div class="group bg-surface-container-lowest border border-outline-variant border-t-[3px] border-t-secondary rounded-lg overflow-hidden flex flex-col md:flex-row transition-all duration-300 hover:border-secondary-fixed">
+            <div class="w-full md:w-1/3 h-48 md:h-auto bg-cover bg-center bg-gray-200"
+              style="background-image:url('${c.image || 'https://via.placeholder.com/300x200?text=No+Image'}')"></div>
+            <div class="p-stack-md flex-1 flex flex-col justify-between">
+              <div>
+                <div class="flex justify-between items-start mb-2">
+                  <div class="flex items-center gap-2">
+                    <span class="px-3 py-1 bg-secondary-container text-on-secondary-container text-caption font-label-md rounded">${c.level}</span>
+                    <span class="text-caption font-label-md text-on-surface-variant">${c.category}</span>
+                  </div>
+                </div>
+                <h3 class="font-headline-sm text-headline-sm text-primary mb-2" style="font-family:'Source Serif 4',serif">${c.name}</h3>
+                <p class="font-body-md text-body-md text-on-surface-variant mb-4">${c.description}</p>
+              </div>
+              <div class="flex items-center justify-between mt-auto">
+                <div class="flex items-center gap-4 text-on-surface-variant">
+                  <div class="flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[20px]">schedule</span>
+                    <span class="font-label-md text-label-md">${c.duration}</span>
+                  </div>
+                  <div class="flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[20px]">payments</span>
+                    <span class="font-label-md text-label-md">PKR ${c.fee.toLocaleString()}/mo</span>
+                  </div>
+                </div>
+                <button onclick="navigateTo('enroll')"
+                  class="px-6 py-2 border border-secondary text-secondary font-label-md text-label-md rounded-lg hover:bg-secondary-container transition-colors active:scale-95">Enroll</button>
+              </div>
+            </div>
+          </div>`;
+        }).join('');
+      } catch (error) {
+        console.error("Error loading courses:", error);
+        container.innerHTML = `
+          <p class="text-error font-body-md col-span-full text-center py-10 border border-error-container rounded-xl">
+            Unable to load courses at this time.
+          </p>`;
+      }
+    }
+
+    loadCourses();
+
+    // Enrollment Form Submit
+    document.getElementById('enrollmentForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const submitBtn = e.target.querySelector('button[type="submit"]');
+      submitBtn.disabled = true;
+      submitBtn.innerText = "Submitting...";
+
+      const studentData = {
+        name: document.getElementById('studentName').value,
+        email: document.getElementById('studentEmail').value,
+        course: document.getElementById('courseInterest').value,
+        timestamp: serverTimestamp()
+      };
+
+      try {
+        await addDoc(collection(db, "enrollments"), studentData);
+        alert("🎉 Registration Successful! We will contact you soon.");
+        e.target.reset();
+      } catch (error) {
+        console.error("Error adding document: ", error);
+        alert("Something went wrong. Please try again.");
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerText = "Submit Registration";
+      }
+    });
   </script>
 
 </body>
