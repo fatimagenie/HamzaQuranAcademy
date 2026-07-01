@@ -661,30 +661,43 @@
     <!-- END: COURSES -->
 
 
-    <section id="enroll-section" class="py-12">
-      <div class="max-w-md mx-auto px-4">
-        <h2 class="text-2xl font-bold text-primary mb-4">Enroll in Academy</h2>
-        <p class="text-body-md text-surface-variant mb-6">Fill out this form to start your 3-day free trial classes.</p>
+  </main>
 
-        <form id="enrollmentForm" class="flex flex-col gap-4">
+  <!-- ========================================= -->
+  <!-- PAGE: ENROLL                              -->
+  <!-- ========================================= -->
+  <section id="page-enroll" class="page-section">
+    <section class="py-stack-lg px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+      <div class="text-center mb-stack-lg reveal">
+        <div
+          class="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-secondary-container text-on-secondary-container mb-stack-sm">
+          <span class="material-symbols-outlined text-[18px]" style="font-variation-settings:'FILL' 1">person_add</span>
+          <span class="font-label-md text-label-md">Start Learning Today</span>
+        </div>
+        <h2 class="font-headline-md text-headline-md text-primary mb-2" style="font-family:'Source Serif 4',serif">
+          Enroll in Academy</h2>
+        <p class="font-body-md text-body-md text-on-surface-variant max-w-xl mx-auto">Fill out this form to start your 3-day free trial classes. Our team will contact you shortly.</p>
+      </div>
+      <div class="max-w-lg mx-auto">
+        <form id="enrollmentForm" class="flex flex-col gap-5 bg-white p-8 md:p-10 rounded-2xl border border-outline-variant serene-shadow reveal">
           <div>
-            <label class="block font-medium text-on-surface-variant mb-1">Full Name</label>
+            <label class="block font-label-md text-label-md text-on-surface mb-2">Full Name <span class="text-error">*</span></label>
             <input type="text" id="studentName" required
-              class="w-full p-2.5 rounded-md border border-outline-variant shadow-sm focus:border-primary focus:ring-primary bg-transparent text-white"
+              class="w-full p-3 rounded-lg border border-outline-variant shadow-sm focus:border-primary focus:ring-2 focus:ring-primary/10 bg-transparent text-on-surface font-body-md transition-all outline-none"
               placeholder="Your Name">
           </div>
 
           <div>
-            <label class="block font-medium text-on-surface-variant mb-1">Email Address</label>
+            <label class="block font-label-md text-label-md text-on-surface mb-2">Email Address <span class="text-error">*</span></label>
             <input type="email" id="studentEmail" required
-              class="w-full p-2.5 rounded-md border border-outline-variant shadow-sm focus:border-primary focus:ring-primary bg-transparent text-white"
+              class="w-full p-3 rounded-lg border border-outline-variant shadow-sm focus:border-primary focus:ring-2 focus:ring-primary/10 bg-transparent text-on-surface font-body-md transition-all outline-none"
               placeholder="Your Email">
           </div>
 
           <div>
-            <label class="block font-medium text-on-surface-variant mb-1">Course Interest</label>
+            <label class="block font-label-md text-label-md text-on-surface mb-2">Course Interest</label>
             <select id="courseInterest"
-              class="w-full p-2.5 rounded-md border border-outline-variant shadow-sm focus:border-primary focus:ring-primary bg-neutral-900 text-white">
+              class="w-full p-3 rounded-lg border border-outline-variant shadow-sm focus:border-primary focus:ring-2 focus:ring-primary/10 bg-transparent text-on-surface font-body-md transition-all outline-none cursor-pointer">
               <option value="Noorani Qaida">Noorani Qaida</option>
               <option value="Quran Reading">Quran Reading with Tajweed</option>
               <option value="Quran Memorization">Quran Memorization (Hifz)</option>
@@ -693,12 +706,14 @@
           </div>
 
           <button type="submit"
-            class="mt-2 w-full p-3 bg-primary text-on-primary font-bold rounded-md hover:bg-primary-hover transition-colors shadow-md">
+            class="mt-2 w-full p-3.5 bg-primary text-on-primary font-label-md text-label-md font-bold rounded-lg hover:opacity-90 transition-all active:scale-95 shadow-md flex items-center justify-center gap-2">
+            <span class="material-symbols-outlined text-[20px]">send</span>
             Submit Registration
           </button>
         </form>
       </div>
     </section>
+  </section>
   </main>
 
   <!-- ===== NEW FOOTER & CONTACT SECTION ===== -->
@@ -863,7 +878,7 @@
 
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-    import { getFirestore, collection, addDoc, getDocs, serverTimestamp, orderBy, query } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+    import { getFirestore, collection, addDoc, getDocs, serverTimestamp, orderBy, query, where, increment, updateDoc, doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 
     const firebaseConfig = {
       apiKey: "AIzaSyDpvjuOmWwGf7II5vxXdCjn4ddir2LBGxs",
@@ -938,6 +953,53 @@
     }
 
     loadCourses();
+
+    // ===== VISITOR TRACKING =====
+    async function trackVisitor() {
+      try {
+        // Generate or retrieve unique visitor ID
+        let visitorId = localStorage.getItem('hqa_visitor_id');
+        if (!visitorId) {
+          visitorId = 'v_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+          localStorage.setItem('hqa_visitor_id', visitorId);
+        }
+
+        // Check if this visitor already has an entry today
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+        const todayStr = today.toISOString().split('T')[0];
+
+        const analyticsRef = doc(db, "analytics", visitorId);
+        const existingDoc = await getDoc(analyticsRef);
+
+        if (existingDoc.exists()) {
+          const data = existingDoc.data();
+          const lastVisit = data.lastVisit ? data.lastVisit.toDate() : null;
+          const lastVisitDay = lastVisit ? lastVisit.toISOString().split('T')[0] : '';
+
+          // Update existing visitor
+          await updateDoc(analyticsRef, {
+            visits: increment(1),
+            lastVisit: serverTimestamp(),
+            totalPages: increment(1)
+          });
+        } else {
+          // New visitor
+          await setDoc(analyticsRef, {
+            visitorId: visitorId,
+            visits: 1,
+            firstVisit: serverTimestamp(),
+            lastVisit: serverTimestamp(),
+            totalPages: 1,
+            userAgent: navigator.userAgent.substring(0, 100)
+          });
+        }
+      } catch (error) {
+        console.error("Visitor tracking error:", error);
+      }
+    }
+
+    trackVisitor();
 
     // Enrollment Form Submit
     document.getElementById('enrollmentForm').addEventListener('submit', async (e) => {
