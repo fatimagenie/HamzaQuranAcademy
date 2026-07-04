@@ -228,6 +228,11 @@
           <span class="material-symbols-outlined text-[20px]">group</span>
           Enrollments
         </button>
+        <button onclick="showSection('fees')" id="nav-fees"
+          class="sidebar-link w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-surface-600">
+          <span class="material-symbols-outlined text-[20px]">payments</span>
+          Fee Management
+        </button>
 
         <p class="px-3 mt-6 mb-3 text-[10px] font-bold text-surface-400 uppercase tracking-widest">Courses</p>
         <button onclick="showSection('addCourse')" id="nav-addCourse"
@@ -583,6 +588,77 @@
           </div>
         </div>
 
+        <!-- ===== SECTION: FEE MANAGEMENT ===== -->
+        <div id="section-fees" class="section">
+          <div class="mb-6">
+            <h3 class="font-display text-xl font-bold text-surface-900">Fee Management</h3>
+            <p class="text-sm text-surface-500 mt-1">Track and manage student fee payments</p>
+          </div>
+
+          <!-- Fee Stats -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+            <div class="bg-white rounded-2xl p-5 border border-surface-200/60 shadow-card">
+              <div class="flex items-center gap-3">
+                <div class="w-11 h-11 rounded-xl bg-brand-50 flex items-center justify-center">
+                  <span class="material-symbols-outlined text-brand-700 text-xl">check_circle</span>
+                </div>
+                <div>
+                  <p class="text-2xl font-bold text-surface-900" id="feeStatPaid">0</p>
+                  <p class="text-xs text-surface-400 font-medium">Paid</p>
+                </div>
+              </div>
+            </div>
+            <div class="bg-white rounded-2xl p-5 border border-surface-200/60 shadow-card">
+              <div class="flex items-center gap-3">
+                <div class="w-11 h-11 rounded-xl bg-red-50 flex items-center justify-center">
+                  <span class="material-symbols-outlined text-red-600 text-xl">cancel</span>
+                </div>
+                <div>
+                  <p class="text-2xl font-bold text-surface-900" id="feeStatUnpaid">0</p>
+                  <p class="text-xs text-surface-400 font-medium">Unpaid</p>
+                </div>
+              </div>
+            </div>
+            <div class="bg-white rounded-2xl p-5 border border-surface-200/60 shadow-card">
+              <div class="flex items-center gap-3">
+                <div class="w-11 h-11 rounded-xl bg-gold-50 flex items-center justify-center">
+                  <span class="material-symbols-outlined text-gold-600 text-xl">hourglass_empty</span>
+                </div>
+                <div>
+                  <p class="text-2xl font-bold text-surface-900" id="feeStatPending">0</p>
+                  <p class="text-xs text-surface-400 font-medium">Pending</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Filter Toggle -->
+          <div class="bg-white rounded-2xl border border-surface-200/60 shadow-card overflow-hidden">
+            <div class="px-6 py-4 border-b border-surface-100 flex items-center justify-between">
+              <div class="flex items-center gap-4">
+                <h4 class="font-display text-base font-bold text-surface-900">Fee Records</h4>
+                <div class="flex items-center gap-2 bg-surface-100 rounded-lg p-1">
+                  <button onclick="setFeeFilter('all')" id="feeFilterAll"
+                    class="px-3 py-1.5 rounded-md text-xs font-semibold transition-all bg-white text-brand-700 shadow-sm">
+                    All Students
+                  </button>
+                  <button onclick="setFeeFilter('pending')" id="feeFilterPending"
+                    class="px-3 py-1.5 rounded-md text-xs font-semibold transition-all text-surface-500 hover:text-surface-700">
+                    Only Pending
+                  </button>
+                </div>
+              </div>
+              <span id="feeCount" class="text-xs text-surface-400 font-medium">0 records</span>
+            </div>
+            <div id="feesList" class="divide-y divide-surface-100">
+              <div class="px-6 py-12 text-center">
+                <span class="material-symbols-outlined text-5xl text-surface-300 mb-3">receipt_long</span>
+                <p class="text-sm text-surface-400 font-medium">Loading fee records...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <!-- ===== SECTION: ANALYTICS ===== -->
         <div id="section-analytics" class="section">
           <div class="mb-6">
@@ -714,6 +790,7 @@
       loadCoursesList();
       loadEnrollments();
       loadAnalytics();
+      loadFees();
     }
 
     window.logout = function() {
@@ -749,6 +826,7 @@
     const titles = {
       dashboard: 'Dashboard',
       enrollments: 'Enrollments',
+      fees: 'Fee Management',
       addCourse: 'Add Course',
       manageCourses: 'Manage Courses',
       analytics: 'Site Analytics'
@@ -1113,6 +1191,124 @@
         console.error("Error loading enrollments:", error);
       }
     }
+
+    // ===== FEES =====
+    const API_BASE = 'http://localhost:5000';
+    let currentFeeFilter = 'all';
+    let allFees = [];
+
+    async function loadFees() {
+      const feesList = document.getElementById('feesList');
+      try {
+        const res = await fetch(`${API_BASE}/api/fees`);
+        if (!res.ok) throw new Error('Failed to fetch fees');
+        allFees = await res.json();
+        renderFees();
+      } catch (error) {
+        console.error("Error loading fees:", error);
+        feesList.innerHTML = `
+          <div class="px-6 py-12 text-center">
+            <span class="material-symbols-outlined text-5xl text-surface-300 mb-3">cloud_off</span>
+            <p class="text-sm text-surface-400 font-medium">Cannot connect to fee server.</p>
+            <p class="text-xs text-surface-400 mt-1">Make sure backend is running on port 5000</p>
+          </div>`;
+      }
+    }
+
+    function renderFees() {
+      const feesList = document.getElementById('feesList');
+      let fees = allFees;
+
+      if (currentFeeFilter === 'pending') {
+        fees = fees.filter(f => f.status === 'Unpaid' || f.status === 'Pending');
+      }
+
+      // Update stats
+      const paid = allFees.filter(f => f.status === 'Paid').length;
+      const unpaid = allFees.filter(f => f.status === 'Unpaid').length;
+      const pending = allFees.filter(f => f.status === 'Pending').length;
+      document.getElementById('feeStatPaid').textContent = paid;
+      document.getElementById('feeStatUnpaid').textContent = unpaid;
+      document.getElementById('feeStatPending').textContent = pending;
+      document.getElementById('feeCount').textContent = `${fees.length} record${fees.length !== 1 ? 's' : ''}`;
+
+      if (fees.length === 0) {
+        feesList.innerHTML = `
+          <div class="px-6 py-12 text-center">
+            <span class="material-symbols-outlined text-5xl text-surface-300 mb-3">receipt_long</span>
+            <p class="text-sm text-surface-400 font-medium">No fee records found</p>
+          </div>`;
+        return;
+      }
+
+      feesList.innerHTML = fees.map(fee => {
+        const studentName = fee.student ? fee.student.name : 'Unknown';
+        const studentCourse = fee.student ? fee.student.course : '';
+        const initials = studentName.split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase();
+
+        const statusColors = {
+          'Paid': 'bg-brand-50 text-brand-700',
+          'Unpaid': 'bg-red-50 text-red-600',
+          'Pending': 'bg-gold-50 text-gold-600'
+        };
+        const statusClass = statusColors[fee.status] || 'bg-surface-100 text-surface-600';
+
+        const buttonHtml = fee.status !== 'Paid'
+          ? `<button onclick="toggleFeeStatus('${fee.id}')" class="px-3 py-1.5 bg-gradient-to-r from-brand-700 to-brand-600 text-white text-xs font-semibold rounded-lg hover:shadow-md hover:shadow-brand-700/20 transition-all active:scale-[0.97] whitespace-nowrap">
+               Mark as Paid
+             </button>`
+          : `<span class="text-xs text-surface-400 font-medium flex items-center gap-1">
+               <span class="material-symbols-outlined text-[14px] text-brand-500">check</span>
+               Paid
+             </span>`;
+
+        return `
+          <div class="flex items-center justify-between px-6 py-4 table-row">
+            <div class="flex items-center gap-3.5 min-w-0">
+              <div class="w-10 h-10 rounded-full bg-brand-50 flex items-center justify-center text-brand-700 text-xs font-bold flex-shrink-0">${initials}</div>
+              <div class="min-w-0">
+                <p class="text-sm font-semibold text-surface-800 truncate">${studentName}</p>
+                <p class="text-xs text-surface-400">${studentCourse}</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-4 flex-shrink-0">
+              <div class="text-right hidden sm:block">
+                <p class="text-sm font-bold text-surface-800">PKR ${fee.amount ? fee.amount.toLocaleString() : 0}</p>
+                <p class="text-xs text-surface-400">${fee.month}</p>
+              </div>
+              <span class="badge ${statusClass}">${fee.status}</span>
+              ${buttonHtml}
+            </div>
+          </div>`;
+      }).join('');
+    }
+
+    window.setFeeFilter = function(filter) {
+      currentFeeFilter = filter;
+      const allBtn = document.getElementById('feeFilterAll');
+      const pendingBtn = document.getElementById('feeFilterPending');
+      if (filter === 'all') {
+        allBtn.className = 'px-3 py-1.5 rounded-md text-xs font-semibold transition-all bg-white text-brand-700 shadow-sm';
+        pendingBtn.className = 'px-3 py-1.5 rounded-md text-xs font-semibold transition-all text-surface-500 hover:text-surface-700';
+      } else {
+        pendingBtn.className = 'px-3 py-1.5 rounded-md text-xs font-semibold transition-all bg-white text-brand-700 shadow-sm';
+        allBtn.className = 'px-3 py-1.5 rounded-md text-xs font-semibold transition-all text-surface-500 hover:text-surface-700';
+      }
+      renderFees();
+    };
+
+    window.toggleFeeStatus = async function(id) {
+      try {
+        const res = await fetch(`${API_BASE}/api/fees/update-status/${id}`, { method: 'PUT' });
+        if (!res.ok) throw new Error('Failed to update');
+        const data = await res.json();
+        showToast(data.message);
+        loadFees();
+      } catch (error) {
+        console.error("Error updating fee status:", error);
+        showToast('Error updating fee status');
+      }
+    };
   </script>
 
 </body>
