@@ -319,13 +319,13 @@
         <div
           class="container mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-12 gap-gutter items-center relative z-10 py-16">
           <div class="md:col-span-7 flex flex-col gap-stack-md text-on-primary">
-            <span class="font-label-md text-label-md uppercase tracking-widest text-secondary-fixed">Quality Islamic Education for You & Your Family</span>
+            <span id="hero-tagline" class="font-label-md text-label-md uppercase tracking-widest text-secondary-fixed">Quality Islamic Education for You & Your Family</span>
             <h1
               class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg leading-tight"
               style="font-family:'Source Serif 4',serif">
-              Learn Quran Online from <span class="text-secondary-fixed">Expert Tutors</span>
+              <span id="hero-heading">Learn Quran Online from</span> <span id="hero-heading-highlight" class="text-secondary-fixed">Expert Tutors</span>
             </h1>
-            <p class="font-body-lg text-body-lg text-primary-fixed-dim max-w-xl">
+            <p id="hero-description" class="font-body-lg text-body-lg text-primary-fixed-dim max-w-xl">
               At Hamza Quran Academy, we make learning the Quran easy, effective, and spiritually uplifting. Our experienced and certified tutors provide one-on-one online classes with care and dedication — specially designed for your child's success.
             </p>
             <div class="flex flex-wrap gap-stack-sm mt-4">
@@ -753,23 +753,23 @@
       <div class="flex flex-col gap-4">
         <h4 class="font-label-md text-label-md uppercase tracking-wider text-secondary-fixed">Contact Information</h4>
 
-        <a href="https://wa.me/923177882405" target="_blank"
+        <a id="contact-whatsapp" href="https://wa.me/923177882405" target="_blank"
           class="flex items-center gap-3 group text-primary-fixed-dim hover:text-white transition-colors">
           <span
             class="material-symbols-outlined text-secondary-fixed group-hover:scale-110 transition-transform">call</span>
-          <span class="font-body-md">+92 317 7882405 (WhatsApp)</span>
+          <span id="contact-whatsapp-text" class="font-body-md">+92 317 7882405 (WhatsApp)</span>
         </a>
 
-        <a href="mailto:hamzaquranacademey786@gmail.com"
+        <a id="contact-email" href="mailto:hamzaquranacademey786@gmail.com"
           class="flex items-center gap-3 group text-primary-fixed-dim hover:text-white transition-colors">
           <span
             class="material-symbols-outlined text-secondary-fixed group-hover:scale-110 transition-transform">mail</span>
-          <span class="font-body-md">hamzaquranacademey786@gmail.com</span>
+          <span id="contact-email-text" class="font-body-md">hamzaquranacademey786@gmail.com</span>
         </a>
 
         <div class="mt-2 flex items-center gap-4">
           <!-- Facebook -->
-          <a href="https://www.facebook.com/share/19ANVntyhJ/" target="_blank"
+          <a id="social-facebook" href="https://www.facebook.com/share/19ANVntyhJ/" target="_blank"
             class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-secondary-fixed hover:bg-secondary-fixed hover:text-primary transition-all shadow-sm"
             title="Facebook">
             <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
@@ -779,7 +779,7 @@
           </a>
 
           <!-- Instagram -->
-          <a href="https://www.instagram.com/hamzaquranacademy01?igsh=MTRydmoxajg4NWo5aw==" target="_blank"
+          <a id="social-instagram" href="https://www.instagram.com/hamzaquranacademy01?igsh=MTRydmoxajg4NWo5aw==" target="_blank"
             class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-secondary-fixed hover:bg-secondary-fixed hover:text-primary transition-all shadow-sm"
             title="Instagram">
             <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
@@ -789,7 +789,7 @@
           </a>
 
           <!-- LinkedIn -->
-          <a href="https://www.linkedin.com/in/hamza-quran-academy-632839268?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+          <a id="social-linkedin" href="https://www.linkedin.com/in/hamza-quran-academy-632839268?utm_source=share_via&utm_content=profile&utm_medium=member_android"
             target="_blank"
             class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-secondary-fixed hover:bg-secondary-fixed hover:text-primary transition-all shadow-sm"
             title="LinkedIn">
@@ -955,6 +955,55 @@
     }
 
     loadCourses();
+
+    // ===== LOAD SITE SETTINGS =====
+    async function loadSiteSettings() {
+      try {
+        const docRef = doc(db, "settings", "siteSettings");
+        const docSnap = await getDoc(docRef);
+        if (docSnap.exists()) {
+          const s = docSnap.data();
+
+          // Update Hero Section
+          if (s.hero) {
+            const tagline = document.getElementById('hero-tagline');
+            const heading = document.getElementById('hero-heading');
+            const headingHL = document.getElementById('hero-heading-highlight');
+            const description = document.getElementById('hero-description');
+            if (tagline && s.hero.tagline) tagline.textContent = s.hero.tagline;
+            if (heading && s.hero.heading) heading.textContent = s.hero.heading;
+            if (headingHL && s.hero.headingHighlight) headingHL.textContent = s.hero.headingHighlight;
+            if (description && s.hero.description) description.textContent = s.hero.description;
+          }
+
+          // Update Contact Info
+          if (s.contact) {
+            const whatsapp = document.getElementById('contact-whatsapp');
+            const whatsappText = document.getElementById('contact-whatsapp-text');
+            const email = document.getElementById('contact-email');
+            const emailText = document.getElementById('contact-email-text');
+            if (whatsapp && s.contact.whatsappLink) whatsapp.href = s.contact.whatsappLink;
+            if (whatsappText && s.contact.whatsapp) whatsappText.textContent = s.contact.whatsapp;
+            if (email && s.contact.email) email.href = 'mailto:' + s.contact.email;
+            if (emailText && s.contact.email) emailText.textContent = s.contact.email;
+          }
+
+          // Update Social Links
+          if (s.social) {
+            const fb = document.getElementById('social-facebook');
+            const ig = document.getElementById('social-instagram');
+            const li = document.getElementById('social-linkedin');
+            if (fb && s.social.facebook) fb.href = s.social.facebook;
+            if (ig && s.social.instagram) ig.href = s.social.instagram;
+            if (li && s.social.linkedin) li.href = s.social.linkedin;
+          }
+        }
+      } catch (error) {
+        console.error("Error loading site settings:", error);
+      }
+    }
+
+    loadSiteSettings();
 
     // ===== VISITOR TRACKING =====
     async function trackVisitor() {
